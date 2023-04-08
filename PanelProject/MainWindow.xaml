@@ -1,0 +1,15 @@
+﻿<Window x:Class="PanelProject.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PanelProject"
+        mc:Ignorable="d"
+        Title="Тренажёр" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="button2" Content="Вариант запуска №2" HorizontalAlignment="Left" Margin="316,163,0,0" VerticalAlignment="Top" Width="150" Height="50" Click="button2_Click"/>
+        <Button x:Name="button1" Content="Вариант запуска №1" HorizontalAlignment="Left" Margin="316,86,0,0" VerticalAlignment="Top" Width="150" Height="50" Click="button1_Click"/>
+        <Button x:Name="button3" Content="Вариант запуска №3" HorizontalAlignment="Left" Margin="316,244,0,0" VerticalAlignment="Top" Width="150" Height="50" Click="button3_Click"/>
+
+    </Grid>
+</Window>
