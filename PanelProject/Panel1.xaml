@@ -56,11 +56,11 @@
             <Button x:Name="button6" Style="{StaticResource RoundButton}" Grid.Column="2" Grid.Row="9"/>
         </Grid>
         <GridSplitter Background="White" ShowsPreview="False" Height="21" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,0.2,0" />
-        <Canvas Height="120">
+        <Canvas Height="132">
             <Label x:Name="label9" Content="ДИСТ" Style="{StaticResource PanelLabel}" Canvas.Top="5" Canvas.Left="30"/>
-            <Label x:Name="label10" Content="МЕСТ" Style="{StaticResource PanelLabel}" Canvas.Bottom="8" Canvas.Left="30"/>
-            <Button x:Name="button" Canvas.Left="25" Canvas.Top="35" Style="{StaticResource Button}" Click="button_Click">
-                <ContentPresenter x:Name="imgContent" Content="{StaticResource Image.Down}" Width="50"/>
+            <Label x:Name="label10" Content="МЕСТ" Style="{StaticResource PanelLabel}" Canvas.Bottom="6" Canvas.Left="30"/>
+            <Button x:Name="button" Canvas.Left="28" Canvas.Top="30" Style="{StaticResource Button}" Click="button_Click">
+                <ContentPresenter x:Name="imgContent" Content="{StaticResource Image.Down}"/>
             </Button>
             <Button x:Name="button7" Style="{StaticResource RoundButton}" Canvas.Top="30" Canvas.Right="190"/>
             <Label x:Name="label11" Content="ВЫКЛ" Style="{StaticResource PanelLabel}" Canvas.Bottom="30" Canvas.Right="175"/>

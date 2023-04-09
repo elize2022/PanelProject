@@ -286,7 +286,7 @@
 
         <Style x:Key="Button" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Height" Value="50"/>
+            <Setter Property="Height" Value="70"/>
             <Setter Property="Background" Value="White" />
             <Setter Property="Content" Value=""/>
             <Setter Property="BorderThickness" Value="0"/>
