@@ -7,9 +7,18 @@
         mc:Ignorable="d"
         Title="Тренажёр" Height="450" Width="800">
     <Grid>
-        <Button x:Name="button2" Content="Вариант запуска №2" HorizontalAlignment="Left" Margin="316,163,0,0" VerticalAlignment="Top" Width="150" Height="50" Click="button2_Click"/>
-        <Button x:Name="button1" Content="Вариант запуска №1" HorizontalAlignment="Left" Margin="316,86,0,0" VerticalAlignment="Top" Width="150" Height="50" Click="button1_Click"/>
-        <Button x:Name="button3" Content="Вариант запуска №3" HorizontalAlignment="Left" Margin="316,244,0,0" VerticalAlignment="Top" Width="150" Height="50" Click="button3_Click"/>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1">
+            <Button x:Name="button1" Content="Вариант запуска №1" Style="{StaticResource MainWindowButton}" Click="button1_Click"/>
+            <Button x:Name="button2" Content="Вариант запуска №2" Style="{StaticResource MainWindowButton}" Click="button2_Click" />
+            <Button x:Name="button3" Content="Вариант запуска №3" Style="{StaticResource MainWindowButton}" Click="button3_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
