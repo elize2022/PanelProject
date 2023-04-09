@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PanelProject"
         mc:Ignorable="d"
-        Title="Панель №3" Height="628.824" Width="468.008">
+        Title="Панель №3" Height="628" Width="468">
     <StackPanel Orientation="Vertical">
         <Label x:Name="label0" Content="УПРАВЛЕНИЕ АВТОНОМНЫМ ЭЛЕКТРОСНАБЖЕНИЕМ" Style="{StaticResource PanelLabel}"/>
         <Grid>

@@ -117,13 +117,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="switchUp.png" />
+    <Resource Include="images\switchUp.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="switchDown.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="image.jpg" />
+    <Resource Include="images\switchDown.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
