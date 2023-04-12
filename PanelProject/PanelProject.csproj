@@ -122,5 +122,11 @@
   <ItemGroup>
     <Resource Include="images\switchDown.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\socket.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\clock.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

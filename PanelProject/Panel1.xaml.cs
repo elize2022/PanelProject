@@ -24,12 +24,12 @@ namespace PanelProject
             InitializeComponent();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void switch1_Click(object sender, RoutedEventArgs e)
         {
-            if (imgContent.Content == Resources["Image.Up"])
-                imgContent.Content = Resources["Image.Down"];
+            if (imgContent1.Content == Resources["Image.Up"])
+                imgContent1.Content = Resources["Image.Down"];
             else
-                imgContent.Content = Resources["Image.Up"];
+                imgContent1.Content = Resources["Image.Up"];
         }
     }
 }

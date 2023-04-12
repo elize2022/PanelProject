@@ -37,7 +37,7 @@
             <Label x:Name="label8" Content="НЕИСПР" Style="{StaticResource PanelLabel}" Grid.Column="1" Grid.Row="4"/>
             <Label x:Name="label9" Content="НЕИСПР" Style="{StaticResource PanelLabel}" Grid.Column="2" Grid.Row="4"/>
         </Grid>
-        <GridSplitter Background="White" ShowsPreview="False" Height="100" HorizontalAlignment="Stretch" VerticalAlignment="Center" />
+        <GridSplitter Background="White" ShowsPreview="False" Height="100" HorizontalAlignment="Stretch" VerticalAlignment="Center" IsEnabled="False" />
         <Grid Height="316" Margin="0,0,-0.4,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
