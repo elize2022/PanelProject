@@ -20,13 +20,14 @@ namespace PanelProject
         public MainWindow()
         {
             InitializeComponent();
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             Panel1 panel1Window = new Panel1();
             panel1Window.Owner = this;
-            panel1Window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            panel1Window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             panel1Window.Show();
         }
 
@@ -34,7 +35,7 @@ namespace PanelProject
         {
             Panel2 panel2Window = new Panel2();
             panel2Window.Owner = this;
-            panel2Window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            panel2Window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             panel2Window.Show();
         }
 
@@ -42,7 +43,7 @@ namespace PanelProject
         {
             Panel3 panel3Window = new Panel3();
             panel3Window.Owner = this;
-            panel3Window.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            panel3Window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             panel3Window.Show();
         }
     }

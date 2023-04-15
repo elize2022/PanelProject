@@ -83,8 +83,8 @@
                 </Style>
             </Style.Resources>
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Width" Value="23"/>
-            <Setter Property="Height" Value="23"/>
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Height" Value="20"/>
             <Setter Property="Background" Value="Red" />
             <Setter Property="Content" Value=""/>
             <Setter Property="BorderThickness" Value="1"/>
@@ -120,8 +120,8 @@
         </Style>
 
         <Style x:Key="RoundLampOn" TargetType="{x:Type Ellipse}">
-            <Setter Property="Width" Value="20"/>
-            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="10"/>
+            <Setter Property="Height" Value="10"/>
             <Setter Property="Fill" Value="Red"/>
             <Setter Property="Margin" Value="10" />
             <Setter Property="Stroke" Value="Black"/>
@@ -129,8 +129,8 @@
         </Style>
 
         <Style x:Key="RoundLampOff" TargetType="{x:Type Ellipse}">
-            <Setter Property="Width" Value="20"/>
-            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="10"/>
+            <Setter Property="Height" Value="10"/>
             <Setter Property="Fill" Value="LightGray"/>
             <Setter Property="Margin" Value="10" />
             <Setter Property="Stroke" Value="Black"/>
@@ -139,8 +139,8 @@
 
         <Style x:Key="RectangleLampGreenOn" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Width" Value="20"/>
-            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="26"/>
+            <Setter Property="Height" Value="26"/>
             <Setter Property="Background" Value="LawnGreen" />
             <Setter Property="Content" Value=""/>
             <Setter Property="BorderThickness" Value="2"/>
@@ -177,8 +177,8 @@
 
         <Style x:Key="RectangleLampGreenOff" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Width" Value="20"/>
-            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="26"/>
+            <Setter Property="Height" Value="26"/>
             <Setter Property="Background" Value="Green" />
             <Setter Property="Content" Value=""/>
             <Setter Property="BorderThickness" Value="2"/>
@@ -215,8 +215,8 @@
 
         <Style x:Key="RectangleLampRedOn" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Width" Value="20"/>
-            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="26"/>
+            <Setter Property="Height" Value="26"/>
             <Setter Property="Background" Value="Red" />
             <Setter Property="Content" Value=""/>
             <Setter Property="BorderThickness" Value="2"/>
@@ -252,8 +252,8 @@
 
         <Style x:Key="RectangleLampRedOff" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Width" Value="20"/>
-            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="26"/>
+            <Setter Property="Height" Value="26"/>
             <Setter Property="Background" Value="DarkRed" />
             <Setter Property="Content" Value=""/>
             <Setter Property="BorderThickness" Value="2"/>
@@ -337,13 +337,13 @@
 
         <Style x:Key="PanelLabel" TargetType="{x:Type Label}">
             <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="12"/>
+            <Setter Property="FontSize" Value="9"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
 
         <Style x:Key="RoundGreenLampOn" TargetType="{x:Type Ellipse}">
-            <Setter Property="Width" Value="20"/>
-            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="10"/>
+            <Setter Property="Height" Value="10"/>
             <Setter Property="Fill" Value="Green"/>
             <Setter Property="Margin" Value="10" />
             <Setter Property="Stroke" Value="Black"/>
@@ -351,8 +351,8 @@
         </Style>
 
         <Style x:Key="RoundGreenLampOff" TargetType="{x:Type Ellipse}">
-            <Setter Property="Width" Value="20"/>
-            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="10"/>
+            <Setter Property="Height" Value="10"/>
             <Setter Property="Fill" Value="Yellow"/>
             <Setter Property="Margin" Value="10" />
             <Setter Property="Stroke" Value="Black"/>
@@ -379,7 +379,7 @@
 
         </Style>
 
-        <Style x:Key="RectangleLampGreenOnDiff" TargetType="{x:Type Button}">
+        <Style x:Key="RectangleLampGreenOnOnDiff" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Content" Value=""/>
             <Setter Property="Height" Value="45"/>
@@ -410,6 +410,86 @@
                                 </Grid>
                                 <GridSplitter BorderBrush="Black" BorderThickness="1" ShowsPreview="False" HorizontalAlignment="Stretch" VerticalAlignment="Center" IsEnabled="False" />
                                 <Grid Background="LawnGreen">
+                                    <Label Content="ВКЛ" Style="{StaticResource PanelLabel}" FontWeight="Normal" FontSize="8"/>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="RectangleLampGreenOnOffDiff" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Content" Value=""/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Width" Value="45"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="Black" BorderThickness="2" Height="45" Width="45">
+                            <StackPanel>
+                                <Grid Background="White">
+                                    <Label Content="ГОТОВ" Style="{StaticResource PanelLabel}" FontWeight="Normal" FontSize="8"/>
+                                </Grid>
+                                <GridSplitter BorderBrush="Black" BorderThickness="1" ShowsPreview="False" HorizontalAlignment="Stretch" VerticalAlignment="Center" IsEnabled="False" />
+                                <Grid Background="DarkGreen">
+                                    <Label Content="ВКЛ" Style="{StaticResource PanelLabel}" FontWeight="Normal" FontSize="8"/>
+                                </Grid>
+                            </StackPanel>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="RectangleLampGreenOffDiff" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Content" Value=""/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Width" Value="45"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border BorderBrush="Black" BorderThickness="2" Height="45" Width="45">
+                            <StackPanel>
+                                <Grid Background="LightGray">
+                                    <Label Content="ГОТОВ" Style="{StaticResource PanelLabel}" FontWeight="Normal" FontSize="8"/>
+                                </Grid>
+                                <GridSplitter BorderBrush="Black" BorderThickness="1" ShowsPreview="False" HorizontalAlignment="Stretch" VerticalAlignment="Center" IsEnabled="False" />
+                                <Grid Background="DarkGreen">
                                     <Label Content="ВКЛ" Style="{StaticResource PanelLabel}" FontWeight="Normal" FontSize="8"/>
                                 </Grid>
                             </StackPanel>
@@ -451,17 +531,17 @@
         </Style>
 
         <Style x:Key="socketButton" TargetType="{x:Type Button}">
-            <Setter Property="Width" Value="30"/>
-            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="20"/>
+            <Setter Property="Height" Value="20"/>
             <Setter Property="IsEnabled" Value="False"/>
 
 
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
-                        <Canvas Height="30" Width="30">
-                            <Ellipse Fill="White" Height="30" Width="30" StrokeThickness="2" Stroke="Black"/>
-                            <Ellipse Fill="Black" Height="12" Width="12" Canvas.Left="8.5" Canvas.Top="8.5"/>
+                        <Canvas Height="20" Width="20">
+                            <Ellipse Fill="White" Height="20" Width="20" StrokeThickness="2" Stroke="Black"/>
+                            <Ellipse Fill="Black" Height="8" Width="8" Canvas.Left="5.8" Canvas.Top="5.8"/>
                         </Canvas>
                     </ControlTemplate>
                 </Setter.Value>

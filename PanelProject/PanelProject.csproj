@@ -123,5 +123,9 @@
     <Resource Include="images\switchDown.png" />
     <Resource Include="images\switchUp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\switchDownBrown.png" />
+    <Resource Include="images\switchUpBrown.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
