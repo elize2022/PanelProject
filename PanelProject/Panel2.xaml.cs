@@ -23,13 +23,5 @@ namespace PanelProject
         {
             InitializeComponent();
         }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            if (imgContent.Content == Resources["Image.Up"])
-                imgContent.Content = Resources["Image.Down"];
-            else
-                imgContent.Content = Resources["Image.Up"];
-        }
     }
 }

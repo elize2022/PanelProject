@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Reflection;
 
 namespace PanelProject
 {
@@ -19,17 +20,34 @@ namespace PanelProject
     /// </summary>
     public partial class Panel1 : Window
     {
+        private Boolean isOnSwitch1;
         public Panel1()
         {
             InitializeComponent();
+            isOnSwitch1 = false;
         }
 
         private void switch1_Click(object sender, RoutedEventArgs e)
         {
-            if (imgContent1.Content == Resources["Image.Up"])
-                imgContent1.Content = Resources["Image.Down"];
-            else
-                imgContent1.Content = Resources["Image.Up"];
+            try
+            {
+                if (isOnSwitch1)
+                {
+                    var uriSource = new Uri(@"/PanelProject;component/images/switchDown.png", UriKind.Relative);
+                    img1.Source = new BitmapImage(uriSource);
+                    isOnSwitch1 = false;
+                }
+                else
+                {
+                    var uriSource = new Uri(@"/PanelProject;component/images/switchUp.png", UriKind.Relative);
+                    img1.Source = new BitmapImage(uriSource);
+                    isOnSwitch1 = true;
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

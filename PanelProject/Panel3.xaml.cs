@@ -23,13 +23,5 @@ namespace PanelProject
         {
             InitializeComponent();
         }
-
-        private void rectangle1_Click(object sender, RoutedEventArgs e)
-        {
-            if (rectangle1.Style == (Style)Application.Current.Resources["RectangleLampGreenOn"])
-                rectangle1.Style = (Style)Application.Current.Resources["RectangleLampGreenOff"];
-            else
-                rectangle1.Style = (Style)Application.Current.Resources["RectangleLampGreenOn"];
-        }
     }
 }

@@ -6,69 +6,7 @@
         xmlns:local="clr-namespace:PanelProject"
         mc:Ignorable="d"
         Title="Панель №3" Height="628" Width="468">
-    <StackPanel Orientation="Vertical">
-        <Label x:Name="label0" Content="УПРАВЛЕНИЕ АВТОНОМНЫМ ЭЛЕКТРОСНАБЖЕНИЕМ" Style="{StaticResource PanelLabel}"/>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="1.5*"/>
-            </Grid.ColumnDefinitions>
-            <Label x:Name="label1" Content="ГУ" Style="{StaticResource PanelLabel}" Grid.Column="0" Grid.Row="0"/>
-            <Label x:Name="label2" Content="ГТА" Style="{StaticResource PanelLabel}" Grid.Column="1" Grid.Row="0"/>
-            <Label x:Name="label3" Content="ВНЕШ ПИТ" Style="{StaticResource PanelLabel}"  Grid.Column="2" Grid.Row="0"/>
-            <Ellipse x:Name="lamp1" Style="{StaticResource RoundLampOn}" Grid.Column="0" Grid.Row="1"/>
-            <Ellipse x:Name="lamp2" Style="{StaticResource RoundLampOn}" Grid.Column="1" Grid.Row="1"/>
-            <Ellipse x:Name="lamp3" Style="{StaticResource RoundLampOn}" Grid.Column="2" Grid.Row="1"/>
-            <Label x:Name="label4" Content="ГОТОВ" Style="{StaticResource PanelLabel}" Grid.Column="0" Grid.Row="2"/>
-            <Label x:Name="label5" Content="ГОТОВ" Style="{StaticResource PanelLabel}" Grid.Column="1" Grid.Row="2"/>
-            <Label x:Name="label6" Content="ГОТОВ" Style="{StaticResource PanelLabel}" Grid.Column="2" Grid.Row="2"/>
-            <Ellipse x:Name="lamp4" Style="{StaticResource RoundLampOff}" Grid.Column="0" Grid.Row="3"/>
-            <Ellipse x:Name="lamp5" Style="{StaticResource RoundLampOff}" Grid.Column="1" Grid.Row="3"/>
-            <Ellipse x:Name="lamp6" Style="{StaticResource RoundLampOff}" Grid.Column="2" Grid.Row="3"/>
-            <Label x:Name="label7" Content="НЕИСПР" Style="{StaticResource PanelLabel}" Grid.Column="0" Grid.Row="4"/>
-            <Label x:Name="label8" Content="НЕИСПР" Style="{StaticResource PanelLabel}" Grid.Column="1" Grid.Row="4"/>
-            <Label x:Name="label9" Content="НЕИСПР" Style="{StaticResource PanelLabel}" Grid.Column="2" Grid.Row="4"/>
-        </Grid>
-        <GridSplitter Background="White" ShowsPreview="False" Height="100" HorizontalAlignment="Stretch" VerticalAlignment="Center" IsEnabled="False" />
-        <Grid Height="316" Margin="0,0,-0.4,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="0.5*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="3*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="1.5*"/>
-            </Grid.ColumnDefinitions>
-            <Label x:Name="label10" Content="ВКЛ" Style="{StaticResource PanelLabel}" Grid.Column="0" Grid.Row="0"/>
-            <Label x:Name="label11" Content="ВКЛ" Style="{StaticResource PanelLabel}" Grid.Column="1" Grid.Row="0"/>
-            <Label x:Name="label12" Content="ПОДКЛ" Style="{StaticResource PanelLabel}"  Grid.Column="2" Grid.Row="0"/>
-            <Button x:Name="rectangle1" Style="{StaticResource RectangleLampGreenOn}" Grid.Row="1" Grid.Column="0" Click="rectangle1_Click"/>
-            <Button x:Name="rectangle2" Style="{StaticResource RectangleLampGreenOn}" Grid.Row="1" Grid.Column="1"/>
-            <Button x:Name="rectangle3" Style="{StaticResource RectangleLampGreenOn}" Grid.Row="1" Grid.Column="2"/>
-            <Label x:Name="label13" Content="ОТКЛ" Style="{StaticResource PanelLabel}"  Grid.Column="1" Grid.Row="2"/>
-            <Button x:Name="rectangle4" Style="{StaticResource RectangleLampRedOn}" Grid.Row="3" Grid.Column="1"/>
-            <Canvas Grid.Row="3" Grid.Column="2" Grid.RowSpan="2">
-                <Label x:Name="label14" Content="ТОПЛИВО" Style="{StaticResource PanelLabel}" Canvas.Top="10" Canvas.Left="10"/>
-                <Ellipse x:Name="lamp7" Style="{StaticResource RoundLampOn}" Canvas.Bottom="110" Canvas.Left="20"/>
-                <Label x:Name="label15" Content="ИЗОЛЯЦИЯ" Style="{StaticResource PanelLabel}" Canvas.Top="10" Canvas.Right="10"/>
-                <Ellipse x:Name="lamp8" Style="{StaticResource RoundLampOn}" Canvas.Bottom="110" Canvas.Right="20"/>
-                <Label x:Name="label16" Content="КОНТРОЛЬ&#xD;&#xA;ИНДИКАЦИИ" Style="{StaticResource PanelLabel}" Canvas.Bottom="60" Canvas.Right="50"/>
-                <Ellipse x:Name="lamp9" Style="{StaticResource RoundLampOn}" Canvas.Bottom="20" Canvas.Right="80"/>
-
-            </Canvas>
-        </Grid>
+    <StackPanel>
     </StackPanel>
 
 </Window>
