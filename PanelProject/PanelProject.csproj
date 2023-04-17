@@ -56,6 +56,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Switch.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -126,6 +127,9 @@
   <ItemGroup>
     <Resource Include="images\switchDownBrown.png" />
     <Resource Include="images\switchUpBrown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
