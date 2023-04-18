@@ -20,7 +20,7 @@ namespace PanelProject
 
         public Switch(ref Image img, ref Ellipse lamp)
         {
-            isOn = false;
+            isOn = true;
             this.img = img;
             this.lamp = lamp;
         }

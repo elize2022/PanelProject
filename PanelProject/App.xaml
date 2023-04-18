@@ -26,15 +26,15 @@
         <SolidColorBrush x:Key="ButtonLamp.Disabled.Border" Color="Black"/>
         <SolidColorBrush x:Key="ButtonLamp.Disabled.Foreground" Color="Red"/>
 
-        <SolidColorBrush x:Key="ButtonRectGOn.Static.Background" Color="LawnGreen"/>
+        <SolidColorBrush x:Key="ButtonRectGOn.Static.Background" Color="#FF12E812"/>
         <SolidColorBrush x:Key="ButtonRectGOn.Static.Border" Color="Green"/>
-        <SolidColorBrush x:Key="ButtonRectGOn.MouseOver.Background" Color="LawnGreen"/>
+        <SolidColorBrush x:Key="ButtonRectGOn.MouseOver.Background" Color="#FF12E812"/>
         <SolidColorBrush x:Key="ButtonRectGOn.MouseOver.Border" Color="Green"/>
-        <SolidColorBrush x:Key="ButtonRectGOn.Pressed.Background" Color="LawnGreen"/>
+        <SolidColorBrush x:Key="ButtonRectGOn.Pressed.Background" Color="#FF12E812"/>
         <SolidColorBrush x:Key="ButtonRectGOn.Pressed.Border" Color="Green"/>
-        <SolidColorBrush x:Key="ButtonRectGOn.Disabled.Background" Color="LawnGreen"/>
+        <SolidColorBrush x:Key="ButtonRectGOn.Disabled.Background" Color="#FF12E812"/>
         <SolidColorBrush x:Key="ButtonRectGOn.Disabled.Border" Color="Green"/>
-        <SolidColorBrush x:Key="ButtonRectGOn.Disabled.Foreground" Color="LawnGreen"/>
+        <SolidColorBrush x:Key="ButtonRectGOn.Disabled.Foreground" Color="#FF12E812"/>
 
         <SolidColorBrush x:Key="ButtonRectGOff.Static.Background" Color="Green"/>
         <SolidColorBrush x:Key="ButtonRectGOff.Static.Border" Color="DarkGreen"/>
@@ -141,7 +141,7 @@
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Width" Value="26"/>
             <Setter Property="Height" Value="26"/>
-            <Setter Property="Background" Value="LawnGreen" />
+            <Setter Property="Background" Value="#FF12E812" />
             <Setter Property="Content" Value=""/>
             <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="BorderBrush" Value="Green"/>
@@ -349,7 +349,7 @@
         <Style x:Key="RoundGreenLampOn" TargetType="{x:Type Ellipse}">
             <Setter Property="Width" Value="10"/>
             <Setter Property="Height" Value="10"/>
-            <Setter Property="Fill" Value="Green"/>
+            <Setter Property="Fill" Value="#FF12E812"/>
             <Setter Property="Margin" Value="10" />
             <Setter Property="Stroke" Value="Black"/>
             <Setter Property="StrokeThickness" Value="1"/>
@@ -358,7 +358,7 @@
         <Style x:Key="RoundGreenLampOff" TargetType="{x:Type Ellipse}">
             <Setter Property="Width" Value="10"/>
             <Setter Property="Height" Value="10"/>
-            <Setter Property="Fill" Value="Yellow"/>
+            <Setter Property="Fill" Value="#FFB3B30F"/>
             <Setter Property="Margin" Value="10" />
             <Setter Property="Stroke" Value="Black"/>
             <Setter Property="StrokeThickness" Value="1"/>
@@ -433,7 +433,7 @@
                                     <Label Content="ГОТОВ" Style="{StaticResource PanelLabel}" FontWeight="Normal" FontSize="8"/>
                                 </Grid>
                                 <GridSplitter BorderBrush="Black" BorderThickness="1" ShowsPreview="False" HorizontalAlignment="Stretch" VerticalAlignment="Center" IsEnabled="False" />
-                                <Grid Background="LawnGreen">
+                                <Grid Background="#FF12E812">
                                     <Label Content="ВКЛ" Style="{StaticResource PanelLabel}" FontWeight="Normal" FontSize="8"/>
                                 </Grid>
                             </StackPanel>

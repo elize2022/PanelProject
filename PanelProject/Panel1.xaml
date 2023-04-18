@@ -42,17 +42,17 @@
                         <Ellipse x:Name="lamp4" Style="{StaticResource RoundLampOff}" Grid.Column="2" Grid.Row="2"/>
                         <Label x:Name="label5" Content="ВКЛЮЧЕНИЕ РЕЖИМОВ" Style="{StaticResource PanelLabel}" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3"/>
                         <Label x:Name="label6" Content="50 ГЦ" Style="{StaticResource PanelLabel}" Grid.Column="1" Grid.Row="4"/>
-                        <Ellipse x:Name="lamp5" Style="{StaticResource RoundLampOff}" Grid.Column="0" Grid.Row="4"/>
+                        <Ellipse x:Name="lamp5" Style="{StaticResource RoundGreenLampOn}" Grid.Column="0" Grid.Row="4"/>
                         <Ellipse x:Name="lamp6" Style="{StaticResource RoundLampOff}" Grid.Column="2" Grid.Row="4"/>
                         <Button x:Name="button1" Style="{StaticResource RoundButton}" Grid.Column="0" Grid.Row="5" Click="button1_Click"/>
                         <Button x:Name="button2" Style="{StaticResource RoundButton}" Grid.Column="2" Grid.Row="5"/>
                         <Label x:Name="label7" Content="ОДИН ПЧ 400ГЦ" Style="{StaticResource PanelLabel}" Grid.Column="1" Grid.Row="6"/>
-                        <Ellipse x:Name="lamp7" Style="{StaticResource RoundLampOff}" Grid.Column="0" Grid.Row="6"/>
+                        <Ellipse x:Name="lamp7" Style="{StaticResource RoundGreenLampOn}" Grid.Column="0" Grid.Row="6"/>
                         <Ellipse x:Name="lamp8" Style="{StaticResource RoundLampOff}" Grid.Column="2" Grid.Row="6"/>
                         <Button x:Name="button3" Style="{StaticResource RoundButton}" Grid.Column="0" Grid.Row="7" Click="button3_Click"/>
                         <Button x:Name="button4" Style="{StaticResource RoundButton}" Grid.Column="2" Grid.Row="7"/>
                         <Label x:Name="label8" Content="ТРИ ПЧ 400ГЦ" Style="{StaticResource PanelLabel}" Grid.Column="1" Grid.Row="8"/>
-                        <Ellipse x:Name="lamp9" Style="{StaticResource RoundLampOff}" Grid.Column="0" Grid.Row="8"/>
+                        <Ellipse x:Name="lamp9" Style="{StaticResource RoundGreenLampOn}" Grid.Column="0" Grid.Row="8"/>
                         <Ellipse x:Name="lamp10" Style="{StaticResource RoundLampOff}" Grid.Column="2" Grid.Row="8"/>
                         <Button x:Name="button5" Style="{StaticResource RoundButton}" Grid.Column="0" Grid.Row="9" Click="button5_Click"/>
                         <Button x:Name="button6" Style="{StaticResource RoundButton}" Grid.Column="2" Grid.Row="9"/>
@@ -93,7 +93,7 @@
                         <Label x:Name="label17" Content="ВНЕШ ПИТ" Style="{StaticResource PanelLabel}"  Grid.Column="2" Grid.Row="0"/>
                         <Ellipse x:Name="lamp11" Style="{StaticResource RoundLampOff}" Grid.Column="0" Grid.Row="1"/>
                         <Ellipse x:Name="lamp12" Style="{StaticResource RoundLampOff}" Grid.Column="1" Grid.Row="1"/>
-                        <Ellipse x:Name="lamp13" Style="{StaticResource RoundLampOff}" Grid.Column="2" Grid.Row="1"/>
+                        <Ellipse x:Name="lamp13" Style="{StaticResource RoundGreenLampOn}" Grid.Column="2" Grid.Row="1"/>
                         <Label x:Name="label18" Content="ГОТОВ" Style="{StaticResource PanelLabel}" Grid.Column="0" Grid.Row="2"/>
                         <Label x:Name="label19" Content="ГОТОВ" Style="{StaticResource PanelLabel}" Grid.Column="1" Grid.Row="2"/>
                         <Label x:Name="label20" Content="ГОТОВ" Style="{StaticResource PanelLabel}" Grid.Column="2" Grid.Row="2"/>
@@ -121,8 +121,8 @@
                         <Label x:Name="label24" Content="ВКЛ" Style="{StaticResource PanelLabel}" Grid.Column="0" Grid.Row="0"/>
                         <Label x:Name="label25" Content="ВКЛ" Style="{StaticResource PanelLabel}" Grid.Column="1" Grid.Row="0"/>
                         <Label x:Name="label26" Content="ПОДКЛ" Style="{StaticResource PanelLabel}"  Grid.Column="2" Grid.Row="0"/>
-                        <Button x:Name="rectangle1" Style="{StaticResource RectangleLampGreenOff}" Grid.Row="1" Grid.Column="0" Click="rectangle1_Click"/>
-                        <Button x:Name="rectangle2" Style="{StaticResource RectangleLampGreenOff}" Grid.Row="1" Grid.Column="1" Click="rectangle2_Click"/>
+                        <Button x:Name="rectangle1" Style="{StaticResource RectangleLampGreenOff}" Grid.Row="1" Grid.Column="0"/>
+                        <Button x:Name="rectangle2" Style="{StaticResource RectangleLampGreenOff}" Grid.Row="1" Grid.Column="1"/>
                         <Button x:Name="rectangle3" Style="{StaticResource RectangleLampGreenOff}" Grid.Row="1" Grid.Column="2" Click="rectangle3_Click"/>
                         <Label x:Name="label27" Content="ОТКЛ" Style="{StaticResource PanelLabel}"  Grid.Column="1" Grid.Row="2"/>
                         <Button x:Name="rectangle4" Style="{StaticResource RectangleLampRedOff}" Grid.Row="3" Grid.Column="1" Click="rectangle4_Click"/>
@@ -305,34 +305,34 @@
                     <Label x:Name="label32" Grid.Row="1" Grid.Column="0" Content="12Я6" Style="{StaticResource PanelLabel}"/>
                     <Label x:Name="label33" Grid.Row="1" Grid.Column="2" Content="НК21" Style="{StaticResource PanelLabel}"/>
                     <Button x:Name="switch2" Style="{StaticResource switchButton}" Grid.Row="2" Grid.Column="0" Click="switch_Click">
-                        <Image x:Name="img2" Source="images/switchDownBrown.png" />
+                        <Image x:Name="img2" Source="images/switchUpBrown.png" />
                     </Button>
                     <Button x:Name="switch3" Style="{StaticResource switchButton}" Grid.Row="2" Grid.Column="2" Click="switch_Click">
-                        <Image x:Name="img3" Source="images/switchDownBrown.png"/>
+                        <Image x:Name="img3" Source="images/switchUpBrown.png"/>
                     </Button>
                     <Label x:Name="label34" Grid.Row="3" Grid.Column="0" Content="32Ю6" Style="{StaticResource PanelLabel}"/>
                     <Label x:Name="label35" Grid.Row="3" Grid.Column="2" Content="НИ21А,ШДУ" Style="{StaticResource PanelLabel}"/>
                     <Button x:Name="switch4" Style="{StaticResource switchButton}" Grid.Row="4" Grid.Column="0" Click="switch_Click">
-                        <Image x:Name="img4" Source="images/switchDownBrown.png"/>
+                        <Image x:Name="img4" Source="images/switchUpBrown.png"/>
                     </Button>
                     <Button x:Name="switch5" Style="{StaticResource switchButton}" Grid.Row="4" Grid.Column="2" Click="switch_Click">
-                        <Image x:Name="img5" Source="images/switchDownBrown.png"/>
+                        <Image x:Name="img5" Source="images/switchUpBrown.png"/>
                     </Button>
                     <Label x:Name="label36" Grid.Row="5" Grid.Column="0" Content="НП21А" Style="{StaticResource PanelLabel}"/>
                     <Label x:Name="label37" Grid.Row="5" Grid.Column="2" Content="28М6" Style="{StaticResource PanelLabel}"/>
                     <Button x:Name="switch6" Style="{StaticResource switchButton}" Grid.Row="6" Grid.Column="0" Click="switch_Click">
-                        <Image x:Name="img6" Source="images/switchDownBrown.png"/>
+                        <Image x:Name="img6" Source="images/switchUpBrown.png"/>
                     </Button>
                     <Button x:Name="switch7" Style="{StaticResource switchButton}" Grid.Row="6" Grid.Column="2" Click="switch_Click">
-                        <Image x:Name="img7" Source="images/switchDownBrown.png"/>
+                        <Image x:Name="img7" Source="images/switchUpBrown.png"/>
                     </Button>
                     <Label x:Name="label38" Grid.Row="7" Grid.Column="0" Content="НБ21" Style="{StaticResource PanelLabel}"/>
                     <Label x:Name="label39" Grid.Row="7" Grid.Column="2" Content="3~50ГЦ 220В" Style="{StaticResource PanelLabel}"/>
                     <Button x:Name="switch8" Style="{StaticResource switchButton}" Grid.Row="8" Grid.Column="0" Click="switch_Click">
-                        <Image x:Name="img8" Source="images/switchDownBrown.png"/>
+                        <Image x:Name="img8" Source="images/switchUpBrown.png"/>
                     </Button>
                     <Button x:Name="switch9" Style="{StaticResource switchButton}" Grid.Row="8" Grid.Column="2" Click="switch_Click">
-                        <Image x:Name="img9" Source="images/switchDownBrown.png"/>
+                        <Image x:Name="img9" Source="images/switchUpBrown.png"/>
                     </Button>
                 </Grid>
                 <Border BorderBrush="Black" BorderThickness="1" Height="360" Width="280" Canvas.Left="1122" Canvas.Top="111"></Border>

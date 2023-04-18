@@ -15,20 +15,15 @@ using System.Reflection;
 
 namespace PanelProject
 {
-    /// <summary>
-    /// Interaction logic for Panel1.xaml
-    /// </summary>
     public partial class Panel1 : Window
     {
         //состояния (On или Off)
         private Boolean isOnSwitch1;
         private Switch[] switches2_9 = new Switch[8];
-        private Boolean isOnRectangle1;
-        private Boolean isOnRectangle2;
         private Boolean isOnRectangle3;
-        private Boolean isOnLamp5;
-        private Boolean isOnLamp7;
-        private Boolean isOnLamp9;
+        private Boolean isOnButton1;
+        private Boolean isOnButton3;
+        private Boolean isOnButton5;
         private Boolean[] isOnRectangle5_10 = new Boolean[6];
 
         //стили
@@ -49,12 +44,10 @@ namespace PanelProject
         {
             InitializeComponent();
             isOnSwitch1 = false;
-            isOnRectangle1 = false;
-            isOnRectangle2 = false;
             isOnRectangle3 = false;
-            isOnLamp5 = false;
-            isOnLamp7 = false;
-            isOnLamp9 = false;
+            isOnButton1 = false;
+            isOnButton3 = false;
+            isOnButton5 = false;
             for (int i = 0; i < 6; i++)
             {
                 isOnRectangle5_10[i] = false;
@@ -99,16 +92,9 @@ namespace PanelProject
 
         private void rectangle3_Click(object sender, RoutedEventArgs e)
         {
-            if (!isOnRectangle3) //включаем
+            if (!isOnRectangle3 && switches2_9[6].isOn) //включаем
             {
-                rectangle1.Style = rectangleLampGreenOff;
-                isOnRectangle1 = false;
-                rectangle2.Style = rectangleLampGreenOff;
-                isOnRectangle2 = false;
                 rectangle3.Style = rectangleLampGreenOn;
-                lamp13.Style = roundGreenLampOn;
-                lamp11.Style = roundLampOff;
-                lamp12.Style = roundLampOff;
                 if (isOnSwitch1)
                 {
                     turnOnPanel1();
@@ -120,34 +106,29 @@ namespace PanelProject
         private void turnOffPanel1()
         {
             button1.IsEnabled = false;
-            button2.IsEnabled = false;
             button3.IsEnabled = false;
-            button4.IsEnabled = false;
             button5.IsEnabled = false;
-            button6.IsEnabled = false;
             button7.IsEnabled = false;
         }
 
         private void turnOnPanel1()
         {
             button1.IsEnabled = true;
-            button2.IsEnabled = true;
             button3.IsEnabled = true;
-            button4.IsEnabled = true;
             button5.IsEnabled = true;
-            button6.IsEnabled = true;
             button7.IsEnabled = true;
         }
 
         private void pressButton1()
         {
-            if (!isOnLamp5 && !isOnLamp7 && !isOnLamp9)
+            if (!isOnButton1 && !isOnButton3 && !isOnButton5 && switches2_9[6].isOn)
             {
                 mod50On();
                 button3.IsEnabled = false;
                 button5.IsEnabled = false;
+                isOnButton1 = !isOnButton1;
             }
-            isOnLamp5 = !isOnLamp5;
+            
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -162,13 +143,14 @@ namespace PanelProject
 
         private void pressButton3()
         {
-            if (!isOnLamp7 && !isOnLamp5 && !isOnLamp9)
+            if (!isOnButton3 && !isOnButton1 && !isOnButton5 && switches2_9[6].isOn)
             {
                 modOnePCHOn();
                 button1.IsEnabled = false;
                 button5.IsEnabled = false;
+                isOnButton3 = !isOnButton3;
             }
-            isOnLamp7 = !isOnLamp7;
+            
         }
 
         private void button5_Click(object sender, RoutedEventArgs e)
@@ -178,13 +160,14 @@ namespace PanelProject
 
         private void pressButton5()
         {
-            if (!isOnLamp9 && !isOnLamp5 && !isOnLamp7)
+            if (!isOnButton5 && !isOnButton1 && !isOnButton3 && switches2_9[6].isOn)
             {     
                 modThreePCHOn();
                 button1.IsEnabled = false;
                 button3.IsEnabled = false;
+                isOnButton5 = !isOnButton5;
             }
-            isOnLamp9 = !isOnLamp9;
+            
         }
 
         private void rectangleDiff_Click(object sender, RoutedEventArgs e)
@@ -213,8 +196,6 @@ namespace PanelProject
 
         private void turnOnSwitches()
         {
-            if (!switches2_9[6].isOn) // тумблер НБ21 внизу
-                return;
             foreach (Switch sw in switches2_9)
                 sw.checkStateAndTurnOnLamp();
         }
@@ -232,18 +213,15 @@ namespace PanelProject
 
         private void mod50On()
         {
-            lamp5.Style = roundGreenLampOn;
             button11.Style = roundLampWithRingOn;
             button12.Style = roundLampWithRingOn;
             button13.Style = roundLampWithRingOn;
             lamp27.Style = roundGreenLampOn;
             lamp30.Style = roundGreenLampOn;
-            
         }
 
         private void mod50Off()
         {
-            lamp5.Style = roundLampOff;
             button11.Style = roundLampWithRingOff;
             button12.Style = roundLampWithRingOff;
             button13.Style = roundLampWithRingOff;
@@ -253,7 +231,6 @@ namespace PanelProject
 
         private void modOnePCHOn()
         {
-            lamp7.Style = roundGreenLampOn;
             button8.Style = roundLampWithRingOn;
             button9.Style = roundLampWithRingOn;
             button10.Style = roundLampWithRingOn;
@@ -270,7 +247,6 @@ namespace PanelProject
 
         private void modOnePCHOff()
         {
-            lamp7.Style = roundLampOff;
             button8.Style = roundLampWithRingOff;
             button9.Style = roundLampWithRingOff;
             button10.Style = roundLampWithRingOff;
@@ -287,7 +263,6 @@ namespace PanelProject
 
         private void modThreePCHOn()
         {
-            lamp9.Style = roundGreenLampOn;
             button8.Style = roundLampWithRingOn;
             button9.Style = roundLampWithRingOn;
             button10.Style = roundLampWithRingOn;
@@ -309,7 +284,6 @@ namespace PanelProject
 
         private void modThreePCHOff()
         {
-            lamp9.Style = roundLampOff;
             button8.Style = roundLampWithRingOff;
             button9.Style = roundLampWithRingOff;
             button10.Style = roundLampWithRingOff;
@@ -331,64 +305,39 @@ namespace PanelProject
 
         private void rectangle4_Click(object sender, RoutedEventArgs e)
         {
-            rectangle1.Style = rectangleLampGreenOff;
-            rectangle2.Style = rectangleLampGreenOff;
             rectangle3.Style = rectangleLampGreenOff;
-            isOnRectangle1 = false;
-            isOnRectangle2 = false;
             isOnRectangle3 = false;
-            lamp11.Style = roundLampOff;
-            lamp12.Style = roundLampOff;
-            lamp13.Style = roundLampOff;
-        }
-
-        private void rectangle1_Click(object sender, RoutedEventArgs e)
-        {
-            if (!isOnRectangle1)
+            turnOffPanel1();
+            if (isOnButton1)
             {
-                rectangle1.Style = rectangleLampGreenOn;
-                rectangle2.Style = rectangleLampGreenOff;
-                isOnRectangle2 = false;
-                rectangle3.Style = rectangleLampGreenOff;
-                isOnRectangle3 = false;
-                lamp11.Style = roundGreenLampOn;
-                lamp12.Style = roundLampOff;
-                lamp13.Style = roundLampOff;
+                mod50Off();
             }
-            isOnRectangle1 = !isOnRectangle1;
-        }
-
-        private void rectangle2_Click(object sender, RoutedEventArgs e)
-        {
-            if (!isOnRectangle2)
+            else if (isOnButton3)
             {
-                rectangle1.Style = rectangleLampGreenOff;
-                isOnRectangle1 = false;
-                rectangle2.Style = rectangleLampGreenOn;
-                rectangle3.Style = rectangleLampGreenOff;
-                isOnRectangle3 = false;
-                lamp12.Style = roundGreenLampOn;
-                lamp11.Style = roundLampOff;
-                lamp13.Style = roundLampOff;
+                modOnePCHOff();
             }
-            isOnRectangle2 = !isOnRectangle2;
+            else if (isOnButton5)
+            {
+                modThreePCHOff();
+            }
+            isOnButton1 = isOnButton3 = isOnButton5 = false;
         }
 
         private void button7_Click(object sender, RoutedEventArgs e)
         {
-            if (isOnLamp5)
+            if (isOnButton1)
             {
                 mod50Off();
             }
-            else if (isOnLamp7)
+            else if (isOnButton3)
             {
                 modOnePCHOff();
             }
-            else if (isOnLamp9)
+            else
             {
                 modThreePCHOff();
             }
-            isOnLamp5 = isOnLamp7 = isOnLamp9 = false;
+            isOnButton1 = isOnButton3 = isOnButton5 = false;
             button1.IsEnabled = button3.IsEnabled = button5.IsEnabled = true;
         }
 
@@ -399,18 +348,22 @@ namespace PanelProject
             int index = int.Parse(btn.Name[btn.Name.Length - 1].ToString()) - 2;
             Switch sw = switches2_9[index];
 
-            sw.changeState((isOnLamp7 || isOnLamp9) && switches2_9[6].isOn);
-            if (index == 6) // тумблер НБ21
+            if (index != 6)
+                sw.changeState((isOnButton3 || isOnButton5) && switches2_9[6].isOn);
+            else // тумблер НБ21
             {
-                if (sw.isOn && (isOnLamp7 || isOnLamp9))
+                sw.changeState((isOnButton3 || isOnButton5) && !switches2_9[6].isOn);
+                if (!sw.isOn && (isOnButton1 || isOnButton3 || isOnButton5 || isOnRectangle3))
                 {
-                    foreach (Switch s in switches2_9) // включить лампочки других тумблеров
-                        s.checkStateAndTurnOnLamp();
-                }
-                if (!sw.isOn && (isOnLamp7 || isOnLamp9))
-                {
-                    foreach (Switch s in switches2_9) // выключить лампочки других тумблеров
-                        s.turnOffLamp();
+                    if (isOnButton1)
+                        mod50Off();
+                    else if (isOnButton3)
+                        modOnePCHOff();
+                    else if (isOnButton5)
+                        modThreePCHOff();
+                    isOnButton1 = isOnButton3 = isOnButton5 = false;
+                    rectangle3.Style = rectangleLampGreenOff;
+                    isOnRectangle3 = false;
                 }
             }
         }
