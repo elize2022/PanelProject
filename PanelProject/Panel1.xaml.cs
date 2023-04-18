@@ -123,7 +123,8 @@ namespace PanelProject
         {
             if (!isOnButton1 && !isOnButton3 && !isOnButton5 && switches2_9[6].isOn)
             {
-                mod50On();
+                if (switches2_9[7].isOn)
+                    mod50On();
                 button3.IsEnabled = false;
                 button5.IsEnabled = false;
                 isOnButton1 = !isOnButton1;
@@ -325,7 +326,7 @@ namespace PanelProject
 
         private void button7_Click(object sender, RoutedEventArgs e)
         {
-            if (isOnButton1)
+            if (isOnButton1 && switches2_9[7].isOn)
             {
                 mod50Off();
             }
@@ -348,9 +349,7 @@ namespace PanelProject
             int index = int.Parse(btn.Name[btn.Name.Length - 1].ToString()) - 2;
             Switch sw = switches2_9[index];
 
-            if (index != 6)
-                sw.changeState((isOnButton3 || isOnButton5) && switches2_9[6].isOn);
-            else // тумблер НБ21
+            if (index == 6) // тумблер НБ21
             {
                 sw.changeState((isOnButton3 || isOnButton5) && !switches2_9[6].isOn);
                 if (!sw.isOn && (isOnButton1 || isOnButton3 || isOnButton5 || isOnRectangle3))
@@ -366,6 +365,17 @@ namespace PanelProject
                     isOnRectangle3 = false;
                 }
             }
+            else if (index == 7)
+            {
+                sw.changeState(false);
+                if (sw.isOn && isOnButton1)
+                    mod50On();
+                else if (!sw.isOn && isOnButton1)
+                    mod50Off();
+            }
+            else
+                sw.changeState((isOnButton3 || isOnButton5) && switches2_9[6].isOn);
+
         }
     }
 }
