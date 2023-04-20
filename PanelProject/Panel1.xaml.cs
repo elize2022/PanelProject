@@ -125,6 +125,8 @@ namespace PanelProject
             {
                 if (switches2_9[7].isOn)
                     mod50On();
+                else
+                    lamp30.Style = roundGreenLampOn;
                 button3.IsEnabled = false;
                 button5.IsEnabled = false;
                 isOnButton1 = !isOnButton1;
@@ -326,7 +328,7 @@ namespace PanelProject
 
         private void button7_Click(object sender, RoutedEventArgs e)
         {
-            if (isOnButton1 && switches2_9[7].isOn)
+            if (isOnButton1)
             {
                 mod50Off();
             }
@@ -371,7 +373,10 @@ namespace PanelProject
                 if (sw.isOn && isOnButton1)
                     mod50On();
                 else if (!sw.isOn && isOnButton1)
+                {
                     mod50Off();
+                    lamp30.Style = roundGreenLampOn;
+                }
             }
             else
                 sw.changeState((isOnButton3 || isOnButton5) && switches2_9[6].isOn);
