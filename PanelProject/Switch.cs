@@ -18,11 +18,13 @@ namespace PanelProject
         public Image img;
         public Ellipse lamp;
 
-        public Switch(ref Image img, ref Ellipse lamp)
+        public Switch(ref Image img, ref Ellipse lamp, Boolean isGreenLamp)
         {
             isOn = true;
             this.img = img;
             this.lamp = lamp;
+            if (isGreenLamp)
+                roundGreenLampOff = (Style)Application.Current.Resources["RoundGreenLampOffGreen"];
         }
 
         public void changeState(Boolean isOnMod)

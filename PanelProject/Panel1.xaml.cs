@@ -52,15 +52,15 @@ namespace PanelProject
             {
                 isOnRectangle5_10[i] = false;
             }
-            switches2_9[0] = new Switch(ref img2, ref lamp23);
-            switches2_9[1] = new Switch(ref img3, ref lamp24);
-            switches2_9[2] = new Switch(ref img4, ref lamp25);
-            switches2_9[3] = new Switch(ref img5, ref lamp21);
-            switches2_9[4] = new Switch(ref img6, ref lamp22);
-            switches2_9[5] = new Switch(ref img7, ref lamp26);
-            switches2_9[6] = new Switch(ref img8, ref lamp20);
+            switches2_9[0] = new Switch(ref img2, ref lamp23, false);
+            switches2_9[1] = new Switch(ref img3, ref lamp24, false);
+            switches2_9[2] = new Switch(ref img4, ref lamp25, false);
+            switches2_9[3] = new Switch(ref img5, ref lamp21, false);
+            switches2_9[4] = new Switch(ref img6, ref lamp22, false);
+            switches2_9[5] = new Switch(ref img7, ref lamp26, false);
+            switches2_9[6] = new Switch(ref img8, ref lamp20, false);
             Ellipse el = new Ellipse();
-            switches2_9[7] = new Switch(ref img9, ref el);
+            switches2_9[7] = new Switch(ref img9, ref el, false);
             modThreePCHOff(); // отключение rectangle5-10
             turnOffPanel1();
         }
