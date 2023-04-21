@@ -14,36 +14,66 @@ namespace PanelProject
         private static Style roundGreenLampOff = (Style)Application.Current.Resources["RoundGreenLampOff"];
         private static Style roundGreenLampOn = (Style)Application.Current.Resources["RoundGreenLampOn"];
 
+        private static BitmapImage bitmapImageBrownDown = new BitmapImage(
+            new Uri(@"/PanelProject;component/images/switchDownBrown.png", UriKind.Relative)
+            );
+        private static BitmapImage bitmapImageBrownUp = new BitmapImage(
+            new Uri(@"/PanelProject;component/images/switchUpBrown.png", UriKind.Relative)
+            );
+        private static BitmapImage bitmapImageDown = new BitmapImage(
+            new Uri(@"/PanelProject;component/images/switchDown.png", UriKind.Relative)
+            );
+        private static BitmapImage bitmapImageUp = new BitmapImage(
+            new Uri(@"/PanelProject;component/images/switchUp.png", UriKind.Relative)
+            );
+
         public Boolean isOn;
         public Image img;
         public Ellipse lamp;
+        public Boolean isBrown;
 
-        public Switch(ref Image img, ref Ellipse lamp, Boolean isGreenLamp)
+        public Switch(ref Image img, ref Ellipse lamp, Boolean isBrown)
         {
-            isOn = true;
+            if (isBrown)
+                isOn = true;
+            else
+                isOn = false;
             this.img = img;
             this.lamp = lamp;
-            if (isGreenLamp)
-                roundGreenLampOff = (Style)Application.Current.Resources["RoundGreenLampOffGreen"];
+            this.isBrown = isBrown;
+        }
+
+        public static void setColorLampOff(Style style)
+        {
+            roundGreenLampOff = style;
         }
 
         public void changeState(Boolean isOnMod)
         {
             try
             {
-                Uri uriSource;
-                if (isOn)
+                if (isBrown)
                 {
-                    uriSource = new Uri(@"/PanelProject;component/images/switchDownBrown.png", UriKind.Relative);
-                    lamp.Style = roundGreenLampOff;
+                    if (isOn)
+                    {
+                        img.Source = bitmapImageBrownDown;
+                        if (lamp != null)
+                            lamp.Style = roundGreenLampOff;
+                    }
+                    else
+                    {
+                        img.Source = bitmapImageBrownUp;
+                        if (isOnMod && lamp != null)
+                            lamp.Style = roundGreenLampOn;
+                    }
                 }
                 else
                 {
-                    uriSource = new Uri(@"/PanelProject;component/images/switchUpBrown.png", UriKind.Relative);
-                    if (isOnMod)
-                        lamp.Style = roundGreenLampOn;
+                    if (isOn)
+                        img.Source = bitmapImageDown;
+                    else
+                        img.Source = bitmapImageUp;
                 }
-                img.Source = new BitmapImage(uriSource);
                 isOn = !isOn;
             }
             catch (Exception ex)
@@ -54,15 +84,19 @@ namespace PanelProject
 
         public void checkStateAndTurnOnLamp()
         {
-            if (isOn)
-                lamp.Style = roundGreenLampOn;
-            else
-                lamp.Style = roundGreenLampOff;
+            if (lamp != null)
+            {
+                if (isOn)
+                    lamp.Style = roundGreenLampOn;
+                else
+                    lamp.Style = roundGreenLampOff;
+            }
         }
 
         public void turnOffLamp()
         {
-            lamp.Style = roundGreenLampOff;
+            if (lamp != null)
+                lamp.Style = roundGreenLampOff;
         }
     }
 }
