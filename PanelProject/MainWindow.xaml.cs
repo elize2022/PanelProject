@@ -25,7 +25,7 @@ namespace PanelProject
 
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            Panel1 panel1Window = new Panel1();
+            Panel1 panel1Window = new Panel1(false);
             panel1Window.Owner = this;
             panel1Window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             panel1Window.Show();
@@ -33,7 +33,7 @@ namespace PanelProject
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            Panel2 panel2Window = new Panel2();
+            Panel2 panel2Window = new Panel2(false);
             panel2Window.Owner = this;
             panel2Window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             panel2Window.Show();
@@ -41,7 +41,7 @@ namespace PanelProject
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            Panel3 panel3Window = new Panel3();
+            Panel3 panel3Window = new Panel3(false);
             panel3Window.Owner = this;
             panel3Window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             panel3Window.Show();

@@ -36,11 +36,13 @@ namespace PanelProject
                 if (!isOn && conditionTurnOn) //включаем
                 {
                     btn.Style = rectangleLampGreenOn;
+                    isOn = true;
 
                 }
                 else if(isOn && isTurnOffItself)
                 {
                     btn.Style = rectangleLampGreenOff;
+                    isOn = false;
                 }
             }
             else
@@ -52,9 +54,10 @@ namespace PanelProject
                 else
                 {
                     btn.Style = rectangleLampGreenOnOnDiff;
-                }        
+                }
+                isOn = !isOn;
             }
-            isOn = !isOn;
+            
         }
 
         public void turnOff()
@@ -75,14 +78,14 @@ namespace PanelProject
             if (isSimple)
             {
                 btn.Style = rectangleLampGreenOff;
-                isOn = false;
+                
             }
             else
             {
                 btn.Style = rectangleLampGreenOffDiff;
             }
             btn.IsEnabled = false;
-            
+            isOn = false;
         }
 
         public void enable()

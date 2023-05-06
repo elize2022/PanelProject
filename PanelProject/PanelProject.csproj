@@ -58,6 +58,9 @@
     </ApplicationDefinition>
     <Compile Include="ButtonPanel.cs" />
     <Compile Include="Rectangle.cs" />
+    <Compile Include="StartWindow.xaml.cs">
+      <DependentUpon>StartWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Switch.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -80,6 +83,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Panel3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,6 +139,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\arrowRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\arrowLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\arrowUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\arrowDown.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

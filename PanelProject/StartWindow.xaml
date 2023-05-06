@@ -1,0 +1,28 @@
+﻿<Window x:Class="PanelProject.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PanelProject"
+        mc:Ignorable="d"
+        Title="Тренажёр" Height="448" Width="629" ResizeMode="NoResize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.ColumnSpan="1" Grid.RowSpan="3" Source="images/background.jpg"/>
+        <Label Content="ТРЕНАЖЁР СИСТЕМЫ ЭЛЕКТРОПИТАНИЯ АППАРАТНОГО" Grid.Row="0" Style="{StaticResource PanelLabel}" FontSize="20"/>
+        <Label Content="КОНТЕЙНЕРА Н2А" Grid.Row="1" Style="{StaticResource PanelLabel}" FontSize="20"/>
+
+
+        <StackPanel HorizontalAlignment="Center" Grid.Row="2" Width="350" Margin="136,66.4,136.4,0.4">
+            <Button x:Name="button1" Content="Обучающий режим" Style="{StaticResource MainWindowButton}" Click="button1_Click"/>
+            <Button x:Name="button2" Content="Практический режим" Style="{StaticResource MainWindowButton}" Click="button2_Click" />
+        </StackPanel>
+    </Grid>
+</Window>

@@ -200,13 +200,13 @@
                                 <Label x:Name="label52" Content="НК21А" Style="{StaticResource PanelLabel}" Grid.Row="1" Grid.Column="4"/>
                                 <Label x:Name="label53" Content="32Ю6" Style="{StaticResource PanelLabel}" Grid.Row="1" Grid.Column="5"/>
                                 <Label x:Name="label54" Content="28М6" Style="{StaticResource PanelLabel}" Grid.Row="1" Grid.Column="6"/>
-                                <Ellipse x:Name="lamp20" Style="{StaticResource RoundGreenLampOff}" Grid.Row="2" Grid.Column="0"/>
-                                <Ellipse x:Name="lamp21" Style="{StaticResource RoundGreenLampOff}" Grid.Row="2" Grid.Column="1"/>
-                                <Ellipse x:Name="lamp22" Style="{StaticResource RoundGreenLampOff}" Grid.Row="2" Grid.Column="2"/>
-                                <Ellipse x:Name="lamp23" Style="{StaticResource RoundGreenLampOff}" Grid.Row="2" Grid.Column="3"/>
-                                <Ellipse x:Name="lamp24" Style="{StaticResource RoundGreenLampOff}" Grid.Row="2" Grid.Column="4"/>
-                                <Ellipse x:Name="lamp25" Style="{StaticResource RoundGreenLampOff}" Grid.Row="2" Grid.Column="5"/>
-                                <Ellipse x:Name="lamp26" Style="{StaticResource RoundGreenLampOff}" Grid.Row="2" Grid.Column="6"/>
+                                <Ellipse x:Name="lamp20" Style="{StaticResource RoundGreenLampOffGreen}" Grid.Row="2" Grid.Column="0"/>
+                                <Ellipse x:Name="lamp21" Style="{StaticResource RoundGreenLampOffGreen}" Grid.Row="2" Grid.Column="1"/>
+                                <Ellipse x:Name="lamp22" Style="{StaticResource RoundGreenLampOffGreen}" Grid.Row="2" Grid.Column="2"/>
+                                <Ellipse x:Name="lamp23" Style="{StaticResource RoundGreenLampOffGreen}" Grid.Row="2" Grid.Column="3"/>
+                                <Ellipse x:Name="lamp24" Style="{StaticResource RoundGreenLampOffGreen}" Grid.Row="2" Grid.Column="4"/>
+                                <Ellipse x:Name="lamp25" Style="{StaticResource RoundGreenLampOffGreen}" Grid.Row="2" Grid.Column="5"/>
+                                <Ellipse x:Name="lamp26" Style="{StaticResource RoundGreenLampOffGreen}" Grid.Row="2" Grid.Column="6"/>
 
                             </Grid>
                         </StackPanel>
@@ -240,7 +240,7 @@
                             <Label x:Name="label60" Content="0,5 А" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="1"/>
                             <Label x:Name="label61" Content="0,5 А" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="2"/>
                             <Label x:Name="label62" Content="СЕТЬ 50ГЦ ВКЛ" Style="{StaticResource PanelLabel}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3"/>
-                            <Ellipse x:Name="lamp27" Style="{StaticResource RoundGreenLampOff}" Grid.Row="6" Grid.Column="1"/>
+                            <Ellipse x:Name="lamp27" Style="{StaticResource RoundGreenLampOffGreen}" Grid.Row="6" Grid.Column="1"/>
 
                         </Grid>
                     </StackPanel>
@@ -264,9 +264,9 @@
                         <Label x:Name="label64" Content="ВЫПР 1" Style="{StaticResource PanelLabel}" Grid.Row="1" Grid.Column="1"/>
                         <Label x:Name="label65" Content="САЭС" Style="{StaticResource PanelLabel}" Grid.Row="1" Grid.Column="2"/>
                         <Label x:Name="label66" Content="ВЫПР 2" Style="{StaticResource PanelLabel}" Grid.Row="1" Grid.Column="3"/>
-                        <Ellipse x:Name="lamp28" Style="{StaticResource RoundGreenLampOff}" Grid.Row="2" Grid.Column="1"/>
-                        <Ellipse x:Name="lamp29" Style="{StaticResource RoundGreenLampOff}" Grid.Row="2" Grid.Column="2"/>
-                        <Ellipse x:Name="lamp30" Style="{StaticResource RoundGreenLampOff}" Grid.Row="2" Grid.Column="3"/>
+                        <Ellipse x:Name="lamp28" Style="{StaticResource RoundGreenLampOffGreen}" Grid.Row="2" Grid.Column="1"/>
+                        <Ellipse x:Name="lamp29" Style="{StaticResource RoundGreenLampOffGreen}" Grid.Row="2" Grid.Column="2"/>
+                        <Ellipse x:Name="lamp30" Style="{StaticResource RoundGreenLampOffGreen}" Grid.Row="2" Grid.Column="3"/>
                         <Label x:Name="label67" FontSize="13" Content="⊥" Style="{StaticResource PanelLabel}" Grid.Row="3" Grid.Column="0"/>
                         <Label x:Name="label68" FontSize="13" Content="+" Style="{StaticResource PanelLabel}" Grid.Row="3" Grid.Column="1"/>
                         <Label x:Name="label69" FontSize="13" Content="+" Style="{StaticResource PanelLabel}" Grid.Row="3" Grid.Column="2"/>
@@ -336,55 +336,66 @@
                     </Button>
                 </Grid>
                 <Border BorderBrush="Black" BorderThickness="1" Height="360" Width="280" Canvas.Left="1122" Canvas.Top="111"></Border>
+                <Image x:Name="arrow0" Source="images/arrowUp.png" Width="20" Canvas.Left="29" Canvas.Top="549"/>
+                <Image x:Name="arrow5" Source="images/arrowLeft.png" Width="35" Canvas.Left="66" Canvas.Top="361" Visibility="Hidden"/>
+                <Image x:Name="arrow10" Source="images/arrowRight.png" Width="35" Canvas.Left="371" Canvas.Top="311" Visibility="Hidden"/>
             </Canvas>
         </Border>
         <GridSplitter Background="White" ShowsPreview="False" Height="15" HorizontalAlignment="Stretch" VerticalAlignment="Center" IsEnabled="False" />
         <Border BorderBrush="Black" BorderThickness="1" Height="216" Width="502" Canvas.Left="475" Canvas.Bottom="18" Canvas.Top="557">
-            <Grid Background="LightGray">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1.6*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="2.2*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="1.8*"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Label x:Name="label85" Content="НИ292А" Style="{StaticResource PanelLabel}" FontSize="20" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6"/>
-                <Label x:Name="label72" Content="ВКЛЮЧЕНИЕ СРЕДСТВ" Style="{StaticResource PanelLabel}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6"/>
-                <Label x:Name="label73" Content="Н2А" Style="{StaticResource PanelLabel}" Grid.Row="2" Grid.Column="0"/>
-                <Label x:Name="label74" Content="Н1А" Style="{StaticResource PanelLabel}" Grid.Row="2" Grid.Column="1"/>
-                <Label x:Name="label75" Content="ϟ РАДИО" Style="{StaticResource PanelLabel}" Grid.Row="2" Grid.Column="2"/>
-                <Label x:Name="label76" Content="ϟ" Style="{StaticResource PanelLabel}" Grid.Row="2" Grid.Column="3"/>
-                <Label x:Name="label77" Content="ПРИВОД" Style="{StaticResource PanelLabel}" Grid.Row="2" Grid.Column="4"/>
-                <Label x:Name="label78" Content="32Ю6" Style="{StaticResource PanelLabel}" Grid.Row="2" Grid.Column="5"/>
-                <Button x:Name="rectangle5" Style="{StaticResource RectangleLampGreenOffDiff}" Grid.Row="3" Grid.Column="0" Click="rectangleDiff_Click"/>
-                <Button x:Name="rectangle6" Style="{StaticResource RectangleLampGreenOffDiff}" Grid.Row="3" Grid.Column="1" Click="rectangleDiff_Click"/>
-                <Button x:Name="rectangle7" Style="{StaticResource RectangleLampGreenOffDiff}" Grid.Row="3" Grid.Column="2" Click="rectangleDiff_Click"/>
-                <Button x:Name="rectangle8" Style="{StaticResource RectangleLampGreenOffDiff}" Grid.Row="3" Grid.Column="3" Click="rectangleDiff_Click"/>
-                <Button x:Name="rectangle9" Style="{StaticResource RectangleLampGreenOffDiff}" Grid.Row="3" Grid.Column="4" Click="rectangleDiff_Click"/>
-                <Button x:Name="rectangle10" Style="{StaticResource RectangleLampGreenOffDiff}" Grid.Row="3" Grid.Column="5" Click="rectangleDiff_Click"/>
-                <Label x:Name="label79" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="0"/>
-                <Label x:Name="label80" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="1"/>
-                <Label x:Name="label81" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="2"/>
-                <Label x:Name="label82" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="3"/>
-                <Label x:Name="label83" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="4"/>
-                <Label x:Name="label84" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="5"/>
-                <Button x:Name="rectangle11" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="0"/>
-                <Button x:Name="rectangle12" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="1"/>
-                <Button x:Name="rectangle13" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="2"/>
-                <Button x:Name="rectangle14" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="3"/>
-                <Button x:Name="rectangle15" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="4"/>
-                <Button x:Name="rectangle16" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="5"/>
+            <Canvas>
+                <Grid Background="LightGray" Height="214" Width="501">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.6*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2.2*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="1.8*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="label85" Content="НИ292А" Style="{StaticResource PanelLabel}" FontSize="20" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="6"/>
+                    <Label x:Name="label72" Content="ВКЛЮЧЕНИЕ СРЕДСТВ" Style="{StaticResource PanelLabel}" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="6"/>
+                    <Label x:Name="label73" Content="Н2А" Style="{StaticResource PanelLabel}" Grid.Row="2" Grid.Column="0"/>
+                    <Label x:Name="label74" Content="Н1А" Style="{StaticResource PanelLabel}" Grid.Row="2" Grid.Column="1"/>
+                    <Label x:Name="label75" Content="ϟ РАДИО" Style="{StaticResource PanelLabel}" Grid.Row="2" Grid.Column="2"/>
+                    <Label x:Name="label76" Content="ϟ" Style="{StaticResource PanelLabel}" Grid.Row="2" Grid.Column="3"/>
+                    <Label x:Name="label77" Content="ПРИВОД" Style="{StaticResource PanelLabel}" Grid.Row="2" Grid.Column="4"/>
+                    <Label x:Name="label78" Content="32Ю6" Style="{StaticResource PanelLabel}" Grid.Row="2" Grid.Column="5"/>
+                    <Button x:Name="rectangle5" Style="{StaticResource RectangleLampGreenOffDiff}" Grid.Row="3" Grid.Column="0" Click="rectangleDiff_Click"/>
+                    <Button x:Name="rectangle6" Style="{StaticResource RectangleLampGreenOffDiff}" Grid.Row="3" Grid.Column="1" Click="rectangleDiff_Click"/>
+                    <Button x:Name="rectangle7" Style="{StaticResource RectangleLampGreenOffDiff}" Grid.Row="3" Grid.Column="2" Click="rectangleDiff_Click"/>
+                    <Button x:Name="rectangle8" Style="{StaticResource RectangleLampGreenOffDiff}" Grid.Row="3" Grid.Column="3" Click="rectangleDiff_Click"/>
+                    <Button x:Name="rectangle9" Style="{StaticResource RectangleLampGreenOffDiff}" Grid.Row="3" Grid.Column="4" Click="rectangleDiff_Click"/>
+                    <Button x:Name="rectangle10" Style="{StaticResource RectangleLampGreenOffDiff}" Grid.Row="3" Grid.Column="5" Click="rectangleDiff_Click"/>
+                    <Label x:Name="label79" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="0"/>
+                    <Label x:Name="label80" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="1"/>
+                    <Label x:Name="label81" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="2"/>
+                    <Label x:Name="label82" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="3"/>
+                    <Label x:Name="label83" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="4"/>
+                    <Label x:Name="label84" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="5"/>
+                    <Button x:Name="rectangle11" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="0"/>
+                    <Button x:Name="rectangle12" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="1"/>
+                    <Button x:Name="rectangle13" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="2"/>
+                    <Button x:Name="rectangle14" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="3"/>
+                    <Button x:Name="rectangle15" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="4"/>
+                    <Button x:Name="rectangle16" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="5"/>
 
-            </Grid>
+                </Grid>
+                <Image x:Name="arrow12" Source="images/arrowDown.png" Width="20" Canvas.Left="32" Canvas.Top="26" Visibility="Hidden"/>
+                <Image x:Name="arrow13" Source="images/arrowDown.png" Width="20" Canvas.Left="115" Canvas.Top="26" Visibility="Hidden"/>
+                <Image x:Name="arrow14" Source="images/arrowDown.png" Width="20" Canvas.Left="179" Canvas.Top="26" Visibility="Hidden"/>
+                <Image x:Name="arrow15" Source="images/arrowDown.png" Width="20" Canvas.Left="366" Canvas.Top="26" Visibility="Hidden"/>
+                <Image x:Name="arrow16" Source="images/arrowDown.png" Width="20" Canvas.Left="449" Canvas.Top="26" Visibility="Hidden"/>
+
+            </Canvas>
         </Border>
     </StackPanel>
 

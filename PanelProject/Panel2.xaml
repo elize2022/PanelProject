@@ -336,11 +336,16 @@
                     </Button>
                 </Grid>
                 <Border BorderBrush="Black" BorderThickness="1" Height="360" Width="280" Canvas.Left="1122" Canvas.Top="111"></Border>
+                <Image x:Name="arrow0" Source="images/arrowUp.png" Width="20" Canvas.Left="29" Canvas.Top="549"/>
+                <Image x:Name="arrow6" Source="images/arrowRight.png" Width="35" Canvas.Left="121" Canvas.Top="361" Visibility="Hidden"/>
+                <Image x:Name="arrow10" Source="images/arrowRight.png" Width="35" Canvas.Left="371" Canvas.Top="311" Visibility="Hidden"/>
+
             </Canvas>
         </Border>
         <GridSplitter Background="White" ShowsPreview="False" Height="15" HorizontalAlignment="Stretch" VerticalAlignment="Center" IsEnabled="False" />
         <Border BorderBrush="Black" BorderThickness="1" Height="216" Width="502" Canvas.Left="475" Canvas.Bottom="18" Canvas.Top="557">
-            <Grid Background="LightGray">
+            <Canvas>
+                <Grid Background="LightGray" Height="214" Width="501">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1.6*"/>
                     <RowDefinition Height="*"/>
@@ -385,6 +390,13 @@
                 <Button x:Name="rectangle16" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="5"/>
 
             </Grid>
+                <Image x:Name="arrow12" Source="images/arrowDown.png" Width="20" Canvas.Left="32" Canvas.Top="26" Visibility="Hidden"/>
+                <Image x:Name="arrow13" Source="images/arrowDown.png" Width="20" Canvas.Left="115" Canvas.Top="26" Visibility="Hidden"/>
+                <Image x:Name="arrow14" Source="images/arrowDown.png" Width="20" Canvas.Left="179" Canvas.Top="26" Visibility="Hidden"/>
+                <Image x:Name="arrow15" Source="images/arrowDown.png" Width="20" Canvas.Left="366" Canvas.Top="26" Visibility="Hidden"/>
+                <Image x:Name="arrow16" Source="images/arrowDown.png" Width="20" Canvas.Left="449" Canvas.Top="26" Visibility="Hidden"/>
+
+            </Canvas>
         </Border>
     </StackPanel>
 </Window>

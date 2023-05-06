@@ -7,6 +7,8 @@ namespace PanelProject
 {
     public partial class Panel3 : Window
     {
+        private Boolean isLearning;
+
         private Switch switch_1;
         private Switch[] switches2_9 = new Switch[8];
         private Rectangle rectangle_1;
@@ -20,7 +22,7 @@ namespace PanelProject
         private Style roundGreenLampOff = (Style)Application.Current.Resources["RoundGreenLampOffGreen"];
 
 
-        public Panel3()
+        public Panel3(Boolean isLearning)
         {
             InitializeComponent();
             rectangle_1 = new Rectangle(rectangle1, true);
@@ -46,11 +48,15 @@ namespace PanelProject
             switches2_9[7] = new Switch(ref img9, ref el, true);
 
             Switch.setColorLampOff(roundGreenLampOff);
+            this.isLearning = isLearning;
+            if (!this.isLearning)
+                arrow8.Visibility = Visibility.Hidden;
         }
 
         private void switch1_Click(object sender, RoutedEventArgs e)
         {
-            switch_1.changeState(false);
+            if (!this.isLearning)
+                switch_1.changeState(false);
         }
 
         private void rectangleDiff_Click(object sender, RoutedEventArgs e)
@@ -63,6 +69,41 @@ namespace PanelProject
                 if (btn.Name[btn.Name.Length - 2] == '1')
                     index = 5;
                 rectangles5_10[index].changeState(true, true);
+                if (this.isLearning) {
+                    if (index == 1)
+                    {
+                        arrow13.Visibility = Visibility.Hidden;
+                        rectangles5_10[index].btn.IsEnabled = false;
+                        arrow12.Visibility = Visibility.Visible;
+                        rectangles5_10[0].btn.IsEnabled = true;
+                    }
+                    else if (index == 0)
+                    {
+                        arrow12.Visibility = Visibility.Hidden;
+                        rectangles5_10[index].btn.IsEnabled = false;
+                        arrow14.Visibility = Visibility.Visible;
+                        rectangles5_10[2].btn.IsEnabled = true;
+                    }
+                    else if (index == 2)
+                    {
+                        arrow14.Visibility = Visibility.Hidden;
+                        rectangles5_10[index].btn.IsEnabled = false;
+                        arrow15.Visibility = Visibility.Visible;
+                        rectangles5_10[4].btn.IsEnabled = true;
+                    }
+                    else if (index == 4)
+                    {
+                        arrow15.Visibility = Visibility.Hidden;
+                        rectangles5_10[index].btn.IsEnabled = false;
+                        arrow16.Visibility = Visibility.Visible;
+                        rectangles5_10[5].btn.IsEnabled = true;
+                    }
+                    else if (index == 5)
+                    {
+                        arrow16.Visibility = Visibility.Hidden;
+                        rectangles5_10[index].btn.IsEnabled = false;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -110,59 +151,80 @@ namespace PanelProject
 
         private void firstReadinessRectangles()
         {
-            foreach (Rectangle rec in rectangles5_10)
+            for (int i = 0; i < rectangles5_10.Length; i++)
             {
-                rec.enable();
-                rec.isOn = false;
+                rectangles5_10[i].isOn = false;
+                rectangles5_10[i].enable();
+                if (this.isLearning && i != 1)
+                    rectangles5_10[i].btn.IsEnabled = false;
             }
         }
 
         private void switch_Click(object sender, RoutedEventArgs e)
         {
-            Button btn = (Button)sender;
-            int index = int.Parse(btn.Name[btn.Name.Length - 1].ToString()) - 2;
-            Switch sw = switches2_9[index];
-
-            if (index == 6) // тумблер НБ21
+            if (!this.isLearning)
             {
-                sw.changeState((rectangle_1.isOn || rectangle_2.isOn) && !switches2_9[6].isOn);
-                if (!sw.isOn && (rectangle_1.isOn || rectangle_2.isOn))
+                Button btn = (Button)sender;
+                int index = int.Parse(btn.Name[btn.Name.Length - 1].ToString()) - 2;
+                Switch sw = switches2_9[index];
+
+                if (index == 6) // тумблер НБ21
                 {
-                    modOff();
-                    rectangle_1.turnOff();
-                    rectangle_2.turnOff();
+                    sw.changeState((rectangle_1.isOn || rectangle_2.isOn) && !switches2_9[6].isOn);
+                    if (!sw.isOn && (rectangle_1.isOn || rectangle_2.isOn))
+                    {
+                        modOff();
+                        rectangle_1.turnOff();
+                        rectangle_2.turnOff();
+                    }
                 }
+                else // любой другой
+                    sw.changeState((rectangle_1.isOn || rectangle_2.isOn) && switches2_9[6].isOn);
             }
-            else // любой другой
-                sw.changeState((rectangle_1.isOn || rectangle_2.isOn) && switches2_9[6].isOn);
 
         }
 
         private void rectangle1_Click(object sender, RoutedEventArgs e)
         {
-            if (!rectangle_1.isOn && switches2_9[6].isOn) //включаем
+            if (!this.isLearning)
             {
-                if (rectangle_2.isOn)
-                    firstReadinessRectangles();
-                else
+                if (!rectangle_1.isOn && switches2_9[6].isOn) //включаем
+                {
+                    if (rectangle_2.isOn)
+                        firstReadinessRectangles();
+                    else
+                        modOn();
+                    rectangle_1.changeState(true, true);
+                    if (rectangle_2.isOn)
+                        rectangle_2.changeState(true, true);
+                }
+            }
+            else
+            {
+                if (!rectangle_1.isOn) //включаем
+                {
                     modOn();
-                rectangle_1.changeState(true, true);
-                if (rectangle_2.isOn)
-                    rectangle_2.changeState(true, true);
+                    rectangle_1.changeState(true, true);
+                    arrow8.Visibility = Visibility.Hidden;
+                    arrow13.Visibility = Visibility.Visible;
+                }
             }
         }
 
         private void rectangle2_Click(object sender, RoutedEventArgs e)
         {
-            if (!rectangle_2.isOn && switches2_9[6].isOn) //включаем
+            if (!this.isLearning)
             {
-                if (rectangle_1.isOn)
-                    firstReadinessRectangles();
-                else
-                    modOn();
-                rectangle_2.changeState(true, true);
-                if (rectangle_1.isOn)
-                    rectangle_1.changeState(true, true);
+                if (!rectangle_2.isOn && switches2_9[6].isOn) //включаем
+                {
+                    if (rectangle_1.isOn)
+                        firstReadinessRectangles();
+                    else
+                        modOn();
+                    rectangle_2.changeState(true, true);
+                    if (rectangle_1.isOn)
+                        rectangle_1.changeState(true, true);
+                }
             }
         }
     }

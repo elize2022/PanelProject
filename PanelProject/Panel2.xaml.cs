@@ -7,7 +7,8 @@ namespace PanelProject
 {
     public partial class Panel2 : Window
     {
-        //состояния (On или Off)
+        private Boolean isLearning;
+
         private Switch switch_1;
         private Switch[] switches2_9 = new Switch[8];
         private Rectangle rectangle_3;
@@ -23,7 +24,7 @@ namespace PanelProject
         private Style roundGreenLampOn = (Style)Application.Current.Resources["RoundGreenLampOn"];
 
 
-        public Panel2()
+        public Panel2(Boolean isLearning)
         {
             InitializeComponent();
 
@@ -54,15 +55,33 @@ namespace PanelProject
             Switch.setColorLampOff(roundGreenLampOff);
 
             turnOffPanel1();
+
+            this.isLearning = isLearning;
+            if (!this.isLearning)
+                arrow0.Visibility = Visibility.Hidden;
+            else
+            {
+                rectangle_3.btn.IsEnabled = false;
+            }
         }
 
         private void switch1_Click(object sender, RoutedEventArgs e)
         {
-            switch_1.changeState(false);
-            if (switch_1.isOn && rectangle_3.isOn)
-                turnOnPanel1();
-            else
-                turnOffPanel1();
+            if (!this.isLearning)
+            {
+                switch_1.changeState(false);
+                if (switch_1.isOn && rectangle_3.isOn)
+                    turnOnPanel1();
+                else
+                    turnOffPanel1();
+            }
+            else if (!switch_1.isOn)
+            {
+                switch_1.changeState(false);
+                arrow0.Visibility = Visibility.Hidden;
+                arrow10.Visibility = Visibility.Visible;
+                rectangle_3.btn.IsEnabled = true;
+            }
         }
 
         private void rectangle3_Click(object sender, RoutedEventArgs e)
@@ -70,6 +89,12 @@ namespace PanelProject
             rectangle_3.changeState(switches2_9[6].isOn, false);
             if (rectangle_3.isOn && switch_1.isOn)
                 turnOnPanel1();
+            if (this.isLearning)
+            {
+                arrow10.Visibility = Visibility.Hidden;
+                arrow6.Visibility = Visibility.Visible;
+                rectangle_3.btn.IsEnabled = false;
+            }
         }
 
         private void turnOffPanel1()
@@ -82,15 +107,18 @@ namespace PanelProject
 
         private void turnOnPanel1()
         {
-            button_2.enable();
-            button_4.enable();
+            if (!this.isLearning)
+            {
+                button_2.enable();
+                button_4.enable();
+                button7.IsEnabled = true;
+            }
             button_6.enable();
-            button7.IsEnabled = true;
         }
 
         private void pressButton2()
         {
-            if (!button_2.isOn && !button_4.isOn && !button_6.isOn && switches2_9[6].isOn)
+            if (!button_2.isOn && !button_4.isOn && !button_6.isOn && switches2_9[6].isOn && rectangle_3.isOn)
             {
                 if (switches2_9[7].isOn)
                     mod50On();
@@ -114,7 +142,7 @@ namespace PanelProject
 
         private void pressButton4()
         {
-            if (!button_2.isOn && !button_4.isOn && !button_6.isOn && switches2_9[6].isOn)
+            if (!button_2.isOn && !button_4.isOn && !button_6.isOn && switches2_9[6].isOn && rectangle_3.isOn)
             {
                 modOnePCHOn();
                 button_2.disable();
@@ -130,12 +158,20 @@ namespace PanelProject
 
         private void pressButton6()
         {
-            if (!button_2.isOn && !button_4.isOn && !button_6.isOn && switches2_9[6].isOn)
+            if (!button_2.isOn && !button_4.isOn && !button_6.isOn && switches2_9[6].isOn && rectangle_3.isOn)
             {
                 modThreePCHOn();
-                button_2.disable();
-                button_4.disable();
                 button_6.changeState();
+                if (!this.isLearning)
+                {
+                    button_2.disable();
+                    button_4.disable();
+                }
+                else
+                {
+                    arrow6.Visibility = Visibility.Hidden;
+                    arrow13.Visibility = Visibility.Visible;
+                }
             }
         }
 
@@ -148,6 +184,42 @@ namespace PanelProject
                 if (btn.Name[btn.Name.Length - 2] == '1')
                     index = 5;
                 rectangles5_10[index].changeState(true, true);
+                if (this.isLearning)
+                {
+                    if (index == 1)
+                    {
+                        arrow13.Visibility = Visibility.Hidden;
+                        rectangles5_10[index].btn.IsEnabled = false;
+                        arrow12.Visibility = Visibility.Visible;
+                        rectangles5_10[0].btn.IsEnabled = true;
+                    }
+                    else if (index == 0)
+                    {
+                        arrow12.Visibility = Visibility.Hidden;
+                        rectangles5_10[index].btn.IsEnabled = false;
+                        arrow14.Visibility = Visibility.Visible;
+                        rectangles5_10[2].btn.IsEnabled = true;
+                    }
+                    else if (index == 2)
+                    {
+                        arrow14.Visibility = Visibility.Hidden;
+                        rectangles5_10[index].btn.IsEnabled = false;
+                        arrow15.Visibility = Visibility.Visible;
+                        rectangles5_10[4].btn.IsEnabled = true;
+                    }
+                    else if (index == 4)
+                    {
+                        arrow15.Visibility = Visibility.Hidden;
+                        rectangles5_10[index].btn.IsEnabled = false;
+                        arrow16.Visibility = Visibility.Visible;
+                        rectangles5_10[5].btn.IsEnabled = true;
+                    }
+                    else if (index == 5)
+                    {
+                        arrow16.Visibility = Visibility.Hidden;
+                        rectangles5_10[index].btn.IsEnabled = false;
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -230,85 +302,97 @@ namespace PanelProject
         private void modThreePCHOn()
         {
             modOnAndThreeOn();
-            rectangles5_10[1].enable();
-            rectangles5_10[2].enable();
-            rectangles5_10[3].enable();
-            rectangles5_10[4].enable();
-            rectangles5_10[5].enable();
+            for (int i = 1; i < rectangles5_10.Length; i++)
+            {
+                rectangles5_10[i].enable();
+                if (this.isLearning && i != 1)
+                    rectangles5_10[i].btn.IsEnabled = false;
+            }
+            if (this.isLearning)
+                rectangles5_10[0].btn.IsEnabled = false;
         }
 
         private void rectangle4_Click(object sender, RoutedEventArgs e)
         {
-            rectangle_3.turnOff();
-            turnOffPanel1();
-            if (button_2.isOn)
+            if (!this.isLearning)
             {
-                mod50Off(true);
+                rectangle_3.turnOff();
+                turnOffPanel1();
+                if (button_2.isOn)
+                {
+                    mod50Off(true);
+                }
+                else if (button_4.isOn || button_6.isOn)
+                {
+                    modOnAndThreeOff();
+                }
+                button_2.turnOff();
+                button_4.turnOff();
+                button_6.turnOff();
             }
-            else if (button_4.isOn || button_6.isOn)
-            {
-                modOnAndThreeOff();
-            }
-            button_2.turnOff();
-            button_4.turnOff();
-            button_6.turnOff();
         }
 
         private void button7_Click(object sender, RoutedEventArgs e)
         {
-            if (button_2.isOn)
+            if (!this.isLearning)
             {
-                mod50Off(true);
+                if (button_2.isOn)
+                {
+                    mod50Off(true);
+                }
+                else if (button_4.isOn || button_6.isOn)
+                {
+                    modOnAndThreeOff();
+                }
+                button_2.turnOff();
+                button_4.turnOff();
+                button_6.turnOff();
+                button_2.enable();
+                button_4.enable();
+                button_6.enable();
             }
-            else if (button_4.isOn || button_6.isOn)
-            {
-                modOnAndThreeOff();
-            }
-            button_2.turnOff();
-            button_4.turnOff();
-            button_6.turnOff();
-            button_2.enable();
-            button_4.enable();
-            button_6.enable();
         }
 
 
         private void switch_Click(object sender, RoutedEventArgs e)
         {
-            Button btn = (Button)sender;
-            int index = int.Parse(btn.Name[btn.Name.Length - 1].ToString()) - 2;
-            Switch sw = switches2_9[index];
+            if (!this.isLearning)
+            {
+                Button btn = (Button)sender;
+                int index = int.Parse(btn.Name[btn.Name.Length - 1].ToString()) - 2;
+                Switch sw = switches2_9[index];
 
-            if (index == 6) // тумблер НБ21
-            {
-                sw.changeState((button_4.isOn || button_6.isOn) && !switches2_9[6].isOn);
-                if (!sw.isOn && (button_2.isOn || button_4.isOn || button_6.isOn || rectangle_3.isOn))
+                if (index == 6) // тумблер НБ21
                 {
-                    if (button_2.isOn)
-                        mod50Off(true);
-                    else if (button_4.isOn || button_6.isOn)
-                        modOnAndThreeOff();
-                    button_2.turnOff();
-                    button_2.disable();
-                    button_4.turnOff();
-                    button_4.disable();
-                    button_6.turnOff();
-                    button_6.disable();
-                    rectangle_3.turnOff();
+                    sw.changeState((button_4.isOn || button_6.isOn) && !switches2_9[6].isOn);
+                    if (!sw.isOn && (button_2.isOn || button_4.isOn || button_6.isOn || rectangle_3.isOn))
+                    {
+                        if (button_2.isOn)
+                            mod50Off(true);
+                        else if (button_4.isOn || button_6.isOn)
+                            modOnAndThreeOff();
+                        button_2.turnOff();
+                        button_2.disable();
+                        button_4.turnOff();
+                        button_4.disable();
+                        button_6.turnOff();
+                        button_6.disable();
+                        rectangle_3.turnOff();
+                    }
                 }
-            }
-            else if (index == 7) // тумблер 3-50ГЦ 220В
-            {
-                sw.changeState(false);
-                if (sw.isOn && button_2.isOn)
-                    mod50On();
-                else if (!sw.isOn && button_2.isOn)
+                else if (index == 7) // тумблер 3-50ГЦ 220В
                 {
-                    mod50Off(false);
+                    sw.changeState(false);
+                    if (sw.isOn && button_2.isOn)
+                        mod50On();
+                    else if (!sw.isOn && button_2.isOn)
+                    {
+                        mod50Off(false);
+                    }
                 }
+                else // любой другой
+                    sw.changeState((button_4.isOn || button_6.isOn) && switches2_9[6].isOn);
             }
-            else // любой другой
-                sw.changeState((button_4.isOn || button_6.isOn) && switches2_9[6].isOn);
         }
     }
 }
