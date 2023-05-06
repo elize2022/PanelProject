@@ -20,10 +20,9 @@
         <Label Content="КОНТЕЙНЕРА Н2А" Grid.Row="1" Style="{StaticResource PanelLabel}" FontSize="20"/>
 
 
-        <StackPanel HorizontalAlignment="Center" Grid.Row="2" Width="350" Margin="0,50,0,0">
-            <Button x:Name="button1" Content="Питание от промышленной сети" Style="{StaticResource MainWindowButton}" Click="button1_Click"/>
-            <Button x:Name="button2" Content="Питание от ДЭС" Style="{StaticResource MainWindowButton}" Click="button2_Click" />
-            <Button x:Name="button3" Content="Питание от ГУ" Style="{StaticResource MainWindowButton}" Click="button3_Click"/>
+        <StackPanel HorizontalAlignment="Center" Grid.Row="2" Width="350" Margin="136,66.4,136.4,0.4">
+            <Button x:Name="button1" Content="Обучающий режим" Style="{StaticResource MainWindowButton}" Click="button1_Click"/>
+            <Button x:Name="button2" Content="Практический режим" Style="{StaticResource MainWindowButton}" Click="button2_Click" />
         </StackPanel>
     </Grid>
 </Window>

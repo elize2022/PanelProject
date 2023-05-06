@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace PanelProject
 {
@@ -22,29 +9,25 @@ namespace PanelProject
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
-
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            Panel1 panel1Window = new Panel1(false);
-            panel1Window.Owner = this;
-            panel1Window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            panel1Window.Show();
+            VariantWindow varWindow = new VariantWindow(true);
+            varWindow.Left = this.Left;
+            varWindow.Top = this.Top;
+            varWindow.WindowStartupLocation = WindowStartupLocation.Manual;
+            varWindow.Show();
+            this.Close();
         }
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            Panel2 panel2Window = new Panel2(false);
-            panel2Window.Owner = this;
-            panel2Window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            panel2Window.Show();
+            VariantWindow varWindow = new VariantWindow(false);
+            varWindow.Left = this.Left;
+            varWindow.Top = this.Top;
+            varWindow.WindowStartupLocation = WindowStartupLocation.Manual;
+            varWindow.Show();
+            this.Close();
         }
 
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
-            Panel3 panel3Window = new Panel3(false);
-            panel3Window.Owner = this;
-            panel3Window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            panel3Window.Show();
-        }
     }
 }

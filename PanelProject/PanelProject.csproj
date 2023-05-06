@@ -58,8 +58,8 @@
     </ApplicationDefinition>
     <Compile Include="ButtonPanel.cs" />
     <Compile Include="Rectangle.cs" />
-    <Compile Include="StartWindow.xaml.cs">
-      <DependentUpon>StartWindow.xaml</DependentUpon>
+    <Compile Include="VariantWindow.xaml.cs">
+      <DependentUpon>VariantWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Switch.cs" />
     <Page Include="MainWindow.xaml">
@@ -86,7 +86,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="StartWindow.xaml">
+    <Page Include="VariantWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
