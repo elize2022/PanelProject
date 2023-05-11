@@ -21,7 +21,12 @@ namespace PanelProject
         private Style roundGreenLampOn = (Style)Application.Current.Resources["RoundGreenLampOn"];
         private Style roundGreenLampOff = (Style)Application.Current.Resources["RoundGreenLampOffGreen"];
 
-
+        //пояснения
+        private String noteStep2 = "Включите Н1А";
+        private String noteStep3 = "Включите Н2А";
+        private String noteStep4 = "Включите ϟ РАДИО";
+        private String noteStep5 = "Включите ПРИВОД";
+        private String noteStep6 = "Включите 32Ю6";
         public Panel3(Boolean isLearning)
         {
             InitializeComponent();
@@ -50,7 +55,10 @@ namespace PanelProject
             Switch.setColorLampOff(roundGreenLampOff);
             this.isLearning = isLearning;
             if (!this.isLearning)
+            {
                 arrow8.Visibility = Visibility.Hidden;
+                noteBorder.Visibility = Visibility.Hidden;
+            }
         }
 
         private void switch1_Click(object sender, RoutedEventArgs e)
@@ -73,6 +81,7 @@ namespace PanelProject
                     if (index == 1)
                     {
                         arrow13.Visibility = Visibility.Hidden;
+                        noteLabel.Content = noteStep3;
                         rectangles5_10[index].btn.IsEnabled = false;
                         arrow12.Visibility = Visibility.Visible;
                         rectangles5_10[0].btn.IsEnabled = true;
@@ -80,6 +89,7 @@ namespace PanelProject
                     else if (index == 0)
                     {
                         arrow12.Visibility = Visibility.Hidden;
+                        noteLabel.Content = noteStep4;
                         rectangles5_10[index].btn.IsEnabled = false;
                         arrow14.Visibility = Visibility.Visible;
                         rectangles5_10[2].btn.IsEnabled = true;
@@ -87,6 +97,7 @@ namespace PanelProject
                     else if (index == 2)
                     {
                         arrow14.Visibility = Visibility.Hidden;
+                        noteLabel.Content = noteStep5;
                         rectangles5_10[index].btn.IsEnabled = false;
                         arrow15.Visibility = Visibility.Visible;
                         rectangles5_10[4].btn.IsEnabled = true;
@@ -94,6 +105,7 @@ namespace PanelProject
                     else if (index == 4)
                     {
                         arrow15.Visibility = Visibility.Hidden;
+                        noteLabel.Content = noteStep6;
                         rectangles5_10[index].btn.IsEnabled = false;
                         arrow16.Visibility = Visibility.Visible;
                         rectangles5_10[5].btn.IsEnabled = true;
@@ -101,6 +113,7 @@ namespace PanelProject
                     else if (index == 5)
                     {
                         arrow16.Visibility = Visibility.Hidden;
+                        noteLabel.Content = "Обучение закончено";
                         rectangles5_10[index].btn.IsEnabled = false;
                     }
                 }
@@ -206,6 +219,7 @@ namespace PanelProject
                     modOn();
                     rectangle_1.changeState(true, true);
                     arrow8.Visibility = Visibility.Hidden;
+                    noteLabel.Content = noteStep2;
                     arrow13.Visibility = Visibility.Visible;
                 }
             }

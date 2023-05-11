@@ -23,7 +23,14 @@ namespace PanelProject
         private Style roundGreenLampOff = (Style)Application.Current.Resources["RoundGreenLampOffGreen"];
         private Style roundGreenLampOn = (Style)Application.Current.Resources["RoundGreenLampOn"];
 
-
+        //пояснения
+        private String noteStep2 = "Нажмите ПОДКЛ";
+        private String noteStep3 = "Включите режим ТРИ ПЧ 400ГЦ";
+        private String noteStep4 = "Включите Н1А";
+        private String noteStep5 = "Включите Н2А";
+        private String noteStep6 = "Включите ϟ РАДИО";
+        private String noteStep7 = "Включите ПРИВОД";
+        private String noteStep8 = "Включите 32Ю6";
         public Panel2(Boolean isLearning)
         {
             InitializeComponent();
@@ -58,7 +65,10 @@ namespace PanelProject
 
             this.isLearning = isLearning;
             if (!this.isLearning)
+            {
                 arrow0.Visibility = Visibility.Hidden;
+                noteBorder.Visibility = Visibility.Hidden;
+            }
             else
             {
                 rectangle_3.btn.IsEnabled = false;
@@ -79,6 +89,7 @@ namespace PanelProject
             {
                 switch_1.changeState(false);
                 arrow0.Visibility = Visibility.Hidden;
+                noteLabel.Content = noteStep2;
                 arrow10.Visibility = Visibility.Visible;
                 rectangle_3.btn.IsEnabled = true;
             }
@@ -92,6 +103,7 @@ namespace PanelProject
             if (this.isLearning)
             {
                 arrow10.Visibility = Visibility.Hidden;
+                noteLabel.Content = noteStep3;
                 arrow6.Visibility = Visibility.Visible;
                 rectangle_3.btn.IsEnabled = false;
             }
@@ -170,6 +182,7 @@ namespace PanelProject
                 else
                 {
                     arrow6.Visibility = Visibility.Hidden;
+                    noteLabel.Content = noteStep4;
                     arrow13.Visibility = Visibility.Visible;
                 }
             }
@@ -189,6 +202,7 @@ namespace PanelProject
                     if (index == 1)
                     {
                         arrow13.Visibility = Visibility.Hidden;
+                        noteLabel.Content = noteStep5;
                         rectangles5_10[index].btn.IsEnabled = false;
                         arrow12.Visibility = Visibility.Visible;
                         rectangles5_10[0].btn.IsEnabled = true;
@@ -196,6 +210,7 @@ namespace PanelProject
                     else if (index == 0)
                     {
                         arrow12.Visibility = Visibility.Hidden;
+                        noteLabel.Content = noteStep6;
                         rectangles5_10[index].btn.IsEnabled = false;
                         arrow14.Visibility = Visibility.Visible;
                         rectangles5_10[2].btn.IsEnabled = true;
@@ -203,6 +218,7 @@ namespace PanelProject
                     else if (index == 2)
                     {
                         arrow14.Visibility = Visibility.Hidden;
+                        noteLabel.Content = noteStep7;
                         rectangles5_10[index].btn.IsEnabled = false;
                         arrow15.Visibility = Visibility.Visible;
                         rectangles5_10[4].btn.IsEnabled = true;
@@ -210,6 +226,7 @@ namespace PanelProject
                     else if (index == 4)
                     {
                         arrow15.Visibility = Visibility.Hidden;
+                        noteLabel.Content = noteStep8;
                         rectangles5_10[index].btn.IsEnabled = false;
                         arrow16.Visibility = Visibility.Visible;
                         rectangles5_10[5].btn.IsEnabled = true;
@@ -217,6 +234,7 @@ namespace PanelProject
                     else if (index == 5)
                     {
                         arrow16.Visibility = Visibility.Hidden;
+                        noteLabel.Content = "Обучение закончено";
                         rectangles5_10[index].btn.IsEnabled = false;
                     }
                 }
