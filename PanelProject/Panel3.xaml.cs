@@ -22,9 +22,9 @@ namespace PanelProject
         private Style roundGreenLampOff = (Style)Application.Current.Resources["RoundGreenLampOffGreen"];
 
         //пояснения
-        private String noteStep2 = "Включите Н1А";
-        private String noteStep3 = "Включите Н2А";
-        private String noteStep4 = "Включите ϟ РАДИО";
+        private String noteStep2 = "Включите АП";
+        private String noteStep3 = "Включите АК";
+        private String noteStep4 = "Включите РАДИО";
         private String noteStep5 = "Включите ПРИВОД";
         private String noteStep6 = "Включите 32Ю6";
         public Panel3(Boolean isLearning)

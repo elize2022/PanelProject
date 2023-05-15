@@ -36,24 +36,24 @@
                         <Label x:Name="label2" Content="ДЭС+РПУ" Style="{StaticResource PanelLabel}"  Grid.Column="2" Grid.Row="0"/>
                         <Ellipse x:Name="lamp1" Style="{StaticResource RoundLampOff}" Grid.Column="0" Grid.Row="1"/>
                         <Label x:Name="label3" Content="ГОТОВ" Style="{StaticResource PanelLabel}"  Grid.Column="1" Grid.Row="1"/>
-                        <Ellipse x:Name="lamp2" Style="{StaticResource RoundLampOn}" Grid.Column="2" Grid.Row="1"/>
+                        <Ellipse x:Name="lamp2" Style="{StaticResource RoundGreenLampOn}" Grid.Column="2" Grid.Row="1"/>
                         <Label x:Name="label4" Content="НЕИСПРАВНОСТЬ&#xD;&#xA;     ИЗОЛЯЦИИ" Style="{StaticResource PanelLabel}" Grid.Column="1" Grid.Row="2"/>
                         <Ellipse x:Name="lamp3" Style="{StaticResource RoundLampOff}" Grid.Column="0" Grid.Row="2"/>
                         <Ellipse x:Name="lamp4" Style="{StaticResource RoundLampOff}" Grid.Column="2" Grid.Row="2"/>
                         <Label x:Name="label5" Content="ВКЛЮЧЕНИЕ РЕЖИМОВ" Style="{StaticResource PanelLabel}" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3"/>
                         <Label x:Name="label6" Content="50 ГЦ" Style="{StaticResource PanelLabel}" Grid.Column="1" Grid.Row="4"/>
                         <Ellipse x:Name="lamp5" Style="{StaticResource RoundLampOff}" Grid.Column="0" Grid.Row="4"/>
-                        <Ellipse x:Name="lamp6" Style="{StaticResource RoundLampOn}" Grid.Column="2" Grid.Row="4"/>
+                        <Ellipse x:Name="lamp6" Style="{StaticResource RoundGreenLampOn}" Grid.Column="2" Grid.Row="4"/>
                         <Button x:Name="button1" Style="{StaticResource RoundButton}" Grid.Column="0" Grid.Row="5" />
                         <Button x:Name="button2" Style="{StaticResource RoundButton}" Grid.Column="2" Grid.Row="5" Click="button2_Click"/>
                         <Label x:Name="label7" Content="ОДИН ПЧ 400ГЦ" Style="{StaticResource PanelLabel}" Grid.Column="1" Grid.Row="6"/>
                         <Ellipse x:Name="lamp7" Style="{StaticResource RoundLampOff}" Grid.Column="0" Grid.Row="6"/>
-                        <Ellipse x:Name="lamp8" Style="{StaticResource RoundLampOn}" Grid.Column="2" Grid.Row="6"/>
+                        <Ellipse x:Name="lamp8" Style="{StaticResource RoundGreenLampOn}" Grid.Column="2" Grid.Row="6"/>
                         <Button x:Name="button3" Style="{StaticResource RoundButton}" Grid.Column="0" Grid.Row="7" />
                         <Button x:Name="button4" Style="{StaticResource RoundButton}" Grid.Column="2" Grid.Row="7" Click="button4_Click"/>
                         <Label x:Name="label8" Content="ТРИ ПЧ 400ГЦ" Style="{StaticResource PanelLabel}" Grid.Column="1" Grid.Row="8"/>
                         <Ellipse x:Name="lamp9" Style="{StaticResource RoundLampOff}" Grid.Column="0" Grid.Row="8"/>
-                        <Ellipse x:Name="lamp10" Style="{StaticResource RoundLampOn}" Grid.Column="2" Grid.Row="8"/>
+                        <Ellipse x:Name="lamp10" Style="{StaticResource RoundGreenLampOn}" Grid.Column="2" Grid.Row="8"/>
                         <Button x:Name="button5" Style="{StaticResource RoundButton}" Grid.Column="0" Grid.Row="9" />
                         <Button x:Name="button6" Style="{StaticResource RoundButton}" Grid.Column="2" Grid.Row="9" Click="button6_Click"/>
                     </Grid>
@@ -395,7 +395,7 @@
                 <Image x:Name="arrow14" Source="images/arrowDown.png" Width="20" Canvas.Left="179" Canvas.Top="26" Visibility="Hidden"/>
                 <Image x:Name="arrow15" Source="images/arrowDown.png" Width="20" Canvas.Left="366" Canvas.Top="26" Visibility="Hidden"/>
                 <Image x:Name="arrow16" Source="images/arrowDown.png" Width="20" Canvas.Left="449" Canvas.Top="26" Visibility="Hidden"/>
-                <Border x:Name="noteBorder" BorderThickness="3" BorderBrush="Red" Width="268" Height="132" Canvas.Left="-433" Canvas.Top="82">
+                <Border x:Name="noteBorder" BorderThickness="3" BorderBrush="Red" Width="268" Height="132" Canvas.Left="-429" Canvas.Top="64">
                     <Label x:Name="noteLabel" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Переведите тумблер в&#xD;&#xA;положение ДИСТ" FontSize="20" Foreground="#FFCA3D0E" FontWeight="Bold" />
                 </Border>
             </Canvas>
