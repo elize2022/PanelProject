@@ -16,8 +16,9 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Image Grid.ColumnSpan="1" Grid.RowSpan="3" Source="images/background.jpg"/>
-        <Label Content="ТРЕНАЖЁР СИСТЕМЫ ЭЛЕКТРОПИТАНИЯ АППАРАТНОГО" Grid.Row="0" Style="{StaticResource PanelLabel}" FontSize="20"/>
-        <Label Content="КОНТЕЙНЕРА Н2А" Grid.Row="1" Style="{StaticResource PanelLabel}" FontSize="20"/>
+        <Label Content="ТРЕНАЖЁР СИСТЕМЫ ЭЛЕКТРОПИТАНИЯ" Grid.Row="0" Style="{StaticResource PanelLabel}" FontSize="20"/>
+        <Label Content="МНОГОФУНКЦИОНАЛЬНОЙ" Grid.Row="1" Style="{StaticResource PanelLabel}" FontSize="20"/>
+        <Label Content="РАДИОЛОКАЦИОННОЙ СТАНЦИИ Н2А" Grid.Row="2" Style="{StaticResource PanelLabel}" FontSize="20"/>
 
 
         <StackPanel HorizontalAlignment="Center" Grid.Row="2" Width="350" Margin="136,66.4,136.4,0.4">

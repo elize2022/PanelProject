@@ -12,6 +12,8 @@ namespace PanelProject
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.isLearning = isLearning;
+            if (this.isLearning)
+                this.Title = "Тренажёр. Обучающий режим";
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)

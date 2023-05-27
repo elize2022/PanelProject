@@ -382,12 +382,12 @@
                 <Label x:Name="label82" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="3"/>
                 <Label x:Name="label83" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="4"/>
                 <Label x:Name="label84" Content="ОТКЛ" Style="{StaticResource PanelLabel}" Grid.Row="4" Grid.Column="5"/>
-                <Button x:Name="rectangle11" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="0"/>
-                <Button x:Name="rectangle12" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="1"/>
-                <Button x:Name="rectangle13" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="2"/>
-                <Button x:Name="rectangle14" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="3"/>
-                <Button x:Name="rectangle15" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="4"/>
-                <Button x:Name="rectangle16" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="5"/>
+                <Button x:Name="rectangle11" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="0" Click="rectangleRed_Click"/>
+                <Button x:Name="rectangle12" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="1" Click="rectangleRed_Click"/>
+                <Button x:Name="rectangle13" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="2" Click="rectangleRed_Click"/>
+                <Button x:Name="rectangle14" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="3" Click="rectangleRed_Click"/>
+                <Button x:Name="rectangle15" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="4" Click="rectangleRed_Click"/>
+                <Button x:Name="rectangle16" Style="{StaticResource RectangleLampRedOff}" Grid.Row="5" Grid.Column="5" Click="rectangleRed_Click"/>
 
             </Grid>
                 <Image x:Name="arrow12" Source="images/arrowDown.png" Width="20" Canvas.Left="32" Canvas.Top="26" Visibility="Hidden"/>

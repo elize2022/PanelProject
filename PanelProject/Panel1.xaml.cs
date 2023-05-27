@@ -202,7 +202,8 @@ namespace PanelProject
                 int index = int.Parse(btn.Name[btn.Name.Length - 1].ToString()) - 5;
                 if (btn.Name[btn.Name.Length - 2] == '1')
                     index = 5;
-                rectangles5_10[index].changeState(true, true);
+                if(!rectangles5_10[index].isOn)
+                    rectangles5_10[index].changeState(true, true);
                 if (this.isLearning)
                 {
                     if (index == 1)
@@ -422,6 +423,17 @@ namespace PanelProject
                     sw.changeState((button_3.isOn || button_5.isOn) && switches2_9[6].isOn);
             }
 
+        }
+
+        private void rectangleRed_Click(object sender, RoutedEventArgs e)
+        {
+            if (!this.isLearning)
+            {
+                Button btn = (Button)sender;
+                int index = int.Parse(btn.Name[btn.Name.Length - 1].ToString()) - 1;
+                if(rectangles5_10[index].isOn)
+                    rectangles5_10[index].changeState(true, true);
+            }
         }
     }
 }

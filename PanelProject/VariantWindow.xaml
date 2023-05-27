@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PanelProject"
         mc:Ignorable="d"
-        Title="Тренажёр" Height="448" Width="629" ResizeMode="NoResize">
+        Title="Тренажёр. Практический режим" Height="448" Width="629" ResizeMode="NoResize">
     <Canvas>
         <Grid Width="622">
             <Grid.RowDefinitions>
@@ -17,8 +17,9 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Image Grid.ColumnSpan="1" Grid.RowSpan="3" Source="images/background.jpg"/>
-            <Label Content="ТРЕНАЖЁР СИСТЕМЫ ЭЛЕКТРОПИТАНИЯ АППАРАТНОГО" Grid.Row="0" Style="{StaticResource PanelLabel}" FontSize="20"/>
-            <Label Content="КОНТЕЙНЕРА Н2А" Grid.Row="1" Style="{StaticResource PanelLabel}" FontSize="20"/>
+            <Label Content="ТРЕНАЖЁР СИСТЕМЫ ЭЛЕКТРОПИТАНИЯ" Grid.Row="0" Style="{StaticResource PanelLabel}" FontSize="20"/>
+            <Label Content="МНОГОФУНКЦИОНАЛЬНОЙ" Grid.Row="1" Style="{StaticResource PanelLabel}" FontSize="20"/>
+            <Label Content="РАДИОЛОКАЦИОННОЙ СТАНЦИИ Н2А" Grid.Row="2" Style="{StaticResource PanelLabel}" FontSize="20"/>
 
 
             <StackPanel HorizontalAlignment="Center" Grid.Row="2" Width="350" Margin="0,50,0,0">
